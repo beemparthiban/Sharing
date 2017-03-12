@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_cadastrar_objetos"
+            android:icon="@drawable/ic_lupa"
+            android:title="Cadastrar Objeto"/>
+
+        <item
+            android:id="@+id/nav_proximas_devolucoes"
+            android:icon="@drawable/ic_evento"
+            android:title="Próximas Devoluções" />
+
+        <item
+            android:id="@+id/nav_meus_objetos"
+            android:icon="@drawable/ic_evento"
+            android:title="Meus Objetos"/>
+
+    </group>
+
+    <item android:title="Categorias">
+        <menu>
+            <item
+                android:id="@+id/nav_share"
+                android:icon="@drawable/ic_menu_share"
+                android:title="Ferramentas" />
+            <item
+                android:id="@+id/nav_sobre"
+                android:icon="@drawable/ic_sobre"
+                android:title="Livros" />
+
+            <item
+                android:id="@+id/nav_jogos"
+                android:icon="@drawable/ic_sobre"
+                android:title="Jogos" />
+            <item
+                android:id="@+id/nav_cozinha"
+                android:icon="@drawable/ic_sobre"
+                android:title="Cozinha" />
+            <item
+                android:id="@+id/nav_viagem"
+                android:icon="@drawable/ic_sobre"
+                android:title="Viagem" />
+            <item
+                android:id="@+id/nav_outros"
+                android:icon="@drawable/ic_sobre"
+                android:title="Outros" />
+        </menu>
+    </item>
+
+</menu>

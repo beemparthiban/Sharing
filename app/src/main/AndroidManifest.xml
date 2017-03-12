@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="br.com.mindbit">
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_nome"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".controleacesso.gui.LoginActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".controleacesso.gui.CadastroActivity" />
+        <activity
+            android:name=".controleacesso.gui.PerfilActivity"
+            android:label="@string/title_activity_navigation"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".controleacesso.gui.PesquisarEventoActivity"
+            android:label="@string/title_activity_pesquisar_evento" />
+        <activity
+            android:name=".controleacesso.gui.CompartilharEventoActivity"
+            android:label="Compartilhar Eventos" />
+        <activity
+            android:name=".controleacesso.gui.EscolherAmigoActivity"
+            android:label="Compartilhar Eventos" />
+        <activity
+            android:name=".controleacesso.gui.AddObjetoActivity"
+            android:label="Adicionar Evento" />
+        <activity
+            android:name=".controleacesso.gui.AddAmigoActivity"
+            android:label="Adicionar Amigo" />
+        <activity
+            android:name=".controleacesso.gui.AddDisciplinaActivity"
+            android:label="Adicionar Disciplina" />
+        <activity
+            android:name=".controleacesso.gui.Pop"
+            android:theme="@style/AppTheme.Custom" />
+        <activity
+             android:name=".controleacesso.gui.SobreActivity"
+             android:label="Sobre"/>
+
+    </application>
+
+</manifest>
