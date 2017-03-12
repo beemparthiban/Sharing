@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.view.View;
 import android.widget.EditText;
 import android.widget.ListView;
 
@@ -28,7 +29,7 @@ public class MeusObjetosActivity extends AppCompatActivity {
     private ObjetoNegocio objetoNegocio;
     private SessaoUsuario sessao;
     private Pessoa pessoaLogada;
-    private EventoAdapter adapter;
+    private ObjetoAdapter adapter;
 
 
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,6 +40,7 @@ public class MeusObjetosActivity extends AppCompatActivity {
 
         objetoNegocio = ObjetoNegocio.getInstancia(this);
         setContentView(R.layout.activity_listar_objetos);
+        //mudar pra activity meu objeto
         listView = (ListView)findViewById(R.id.listview_eventos);
         campoPesquisa = (EditText)findViewById(R.id.edtsearch);
         try {
@@ -46,7 +48,7 @@ public class MeusObjetosActivity extends AppCompatActivity {
         } catch (MindbitException e) {
             GuiUtil.exibirMsg(MeusObjetosActivity.this, e.getMessage());
         }
-        adapter = new EventoAdapter(this,listItems);
+        adapter = new ObjetoAdapter(this,listItems);
 
         campoPesquisa.addTextChangedListener(new TextWatcher() {
 
@@ -81,15 +83,26 @@ public class MeusObjetosActivity extends AppCompatActivity {
         int id = pessoaLogada.getId();
         eventosEncontrados = (ArrayList<Objeto>) objetoNegocio.consultarNomeDescricaoParcialPessoa(id, textToSearch);
 
-        adapter = new EventoAdapter(this, eventosEncontrados);
+        adapter = new ObjetoAdapter(this, eventosEncontrados);
         listView.setAdapter(adapter);
     }
 
     public void initList() throws MindbitException {
         eventosPessoa = objetoNegocio.listarObjetosPessoa(pessoaLogada.getId());
 
-        adapter = new EventoAdapter(this, eventosPessoa);
+        adapter = new ObjetoAdapter(this, eventosPessoa);
 
         listView.setAdapter(adapter);
+    }
+
+    public void onObjetoClicked(View v) {
+        /*Intent intent = new Intent(this, ObjetoActivity.class);
+
+        int posicao = listView.getAdapter().getCount();
+        Objeto objeto = (Objeto) listView.getAdapter().getItem(posicao);
+        sessaoUsuario.setObjeto(objeto);
+        startActivity(intent);*/
+        int posicao = listView.getAdapter().getCount();
+        GuiUtil.exibirMsg(MeusObjetosActivity.this,String.valueOf(posicao));
     }
 }

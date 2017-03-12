@@ -21,19 +21,9 @@
             android:weightSum="1">
 
 
-            <TextView
-                android:text="Cadastrar Objetos"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/textView1"
-                android:textSize="30sp"
-                android:layout_marginTop="5dp"
-                android:textColor="@android:color/background_dark"
-                android:textAlignment="center" />
-
             <ImageView
                 android:id="@+id/objPicture"
-                android:layout_marginTop="50dp"
+                android:layout_marginTop="20dp"
                 android:layout_width="match_parent"
                 android:layout_height="200dp"
                 android:background="@drawable/object_default"
@@ -71,6 +61,7 @@
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:layout_marginTop="50dp"
                 android:text="@string/cadastro_btn"
                 android:id="@+id/btnCadastrarObjeto"/>
 

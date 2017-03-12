@@ -134,7 +134,7 @@ public class AddObjetoActivity extends AppCompatActivity{
             return false;
         } else if (!(descricao.length() > 4)) {
             editObjetoDescricao.requestFocus();
-            editObjetoDescricao.setError(resources.getString(R.string.adcEvento_descricao_curta));
+            editObjetoDescricao.setError(resources.getString(R.string.adcObjeto_descricao_curta));
             return false;
         }
         return true;

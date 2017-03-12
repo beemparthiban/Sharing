@@ -5,7 +5,9 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:weightSum="1">
+    android:weightSum="1"
+    android:onClick="onObjetoClicked"
+    >
 
     <TextView
         android:id="@+id/txtitem_data_evento"
@@ -15,7 +17,8 @@
         android:textColor="@android:color/darker_gray"
         android:layout_marginRight="16dp"
         android:layout_marginLeft="40dp"
-        android:textSize="12sp" />
+        android:textSize="12sp"
+        />
 
     <LinearLayout
         android:orientation="horizontal"

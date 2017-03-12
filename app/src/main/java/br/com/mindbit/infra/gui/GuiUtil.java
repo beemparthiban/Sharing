@@ -10,7 +10,9 @@ import android.widget.Toast;
 import java.io.ByteArrayOutputStream;
 
 import br.com.mindbit.R;
+import br.com.mindbit.controleacesso.dominio.Objeto;
 import br.com.mindbit.controleacesso.gui.LoginActivity;
+import br.com.mindbit.controleacesso.gui.PerfilActivity;
 import br.com.mindbit.controleacesso.negocio.SessaoUsuario;
 
 public class GuiUtil {

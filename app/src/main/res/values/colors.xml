@@ -4,7 +4,13 @@
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#df1f1f</color>
     <color name="calendarAddFab">#FFFFFF</color>
-    <color name="popColor">#33b5e5</color>
+    <color name="popColor">#87CEFA</color>
     <color name="Blue_700">#ff3367d6</color>
     <color name="kg_multi_user_text_inactive">#ff808080</color>
+    <color name="roxo">#800080</color>
+    <color name="backgroundGray">#cecece</color>
+    <color name="backgroundLightGray">#D3D3D3</color>
+    <color name="colorBlack">#000000</color>
+    <color name="colorWhite">#FFFFFF</color>
+    <color name="DarkGray">#7b7b7b</color>
 </resources>

@@ -16,12 +16,12 @@ import java.util.List;
 import br.com.mindbit.R;
 import br.com.mindbit.controleacesso.dominio.Objeto;
 
-public class EventoAdapter extends BaseAdapter {
+public class ObjetoAdapter extends BaseAdapter {
         private LayoutInflater mInflater;
         private List<Objeto> objetos;
         private Objeto objeto;
 
-        public EventoAdapter(Context context, List<Objeto> objetos){
+        public ObjetoAdapter(Context context, List<Objeto> objetos){
             this.objetos = objetos;
 
             mInflater = LayoutInflater.from(context);

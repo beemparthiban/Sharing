@@ -49,6 +49,9 @@
             android:name=".controleacesso.gui.ListarObjetosOutrosActivity"
             android:label="Outros Objetos"/>
 
+        <activity
+            android:name=".controleacesso.gui.ObjetoActivity"
+            android:label="@string/app_nome"/>
     </application>
 
 </manifest>

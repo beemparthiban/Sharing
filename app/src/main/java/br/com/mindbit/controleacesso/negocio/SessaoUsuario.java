@@ -1,5 +1,6 @@
 package br.com.mindbit.controleacesso.negocio;
 
+import br.com.mindbit.controleacesso.dominio.Objeto;
 import br.com.mindbit.controleacesso.dominio.Pessoa;
 import br.com.mindbit.controleacesso.dominio.Usuario;
 
@@ -7,6 +8,8 @@ import br.com.mindbit.controleacesso.dominio.Usuario;
  * Classe utilizada para manter o status do usuario
  */
 public class SessaoUsuario {
+        private Objeto objeto;
+        //verificar isso, pra passar o objeto entre telas
 
         /* singleton */
         private static SessaoUsuario instanciaSessaoUsuario = new SessaoUsuario();
@@ -32,4 +35,12 @@ public class SessaoUsuario {
             this.setUsuarioLogado(null);
             this.setPessoaLogada(null);
         }
+
+    public Objeto getObjeto() {
+        return objeto;
+    }
+
+    public void setObjeto(Objeto objeto) {
+        this.objeto = objeto;
+    }
 }

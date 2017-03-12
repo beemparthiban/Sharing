@@ -42,7 +42,7 @@ public class PerfilActivity extends AppCompatActivity
     private EditText campoPesquisa;
 
     private ObjetoNegocio objetoNegocio;
-    private EventoAdapter adapter;
+    private ObjetoAdapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -90,7 +90,7 @@ public class PerfilActivity extends AppCompatActivity
             GuiUtil.exibirMsg(PerfilActivity.this, e.getMessage());
         }
 
-        adapter = new EventoAdapter(this,listItems);
+        adapter = new ObjetoAdapter(this,listItems);
 
         campoPesquisa.addTextChangedListener(new TextWatcher() {
 
@@ -209,17 +209,39 @@ public class PerfilActivity extends AppCompatActivity
         int id = pessoaLogada.getId();
         eventosEncontrados = (ArrayList<Objeto>) objetoNegocio.consultarNomeDescricaoParcial(pessoaLogada.getId(),textToSearch);
 
-        adapter = new EventoAdapter(this, eventosEncontrados);
+        adapter = new ObjetoAdapter(this, eventosEncontrados);
         listView.setAdapter(adapter);
     }
 
     public void initList() throws MindbitException {
         eventosPessoa = objetoNegocio.listarObjetos(pessoaLogada.getId());
 
-        adapter = new EventoAdapter(this, eventosPessoa);
+        adapter = new ObjetoAdapter(this, eventosPessoa);
 
         listView.setAdapter(adapter);
+
     }
 
+   /* public void onButtonClickProjeto(View v){
 
+        if (v.getId() == R.id.objeto_imagem_principal){
+            Intent intent= new Intent(this, ListaImagensObjeto.class);
+            sessaoUsuario.setObjeto(objeto);
+            startActivity(intent);
+        }
+    }*/
+
+    public void onObjetoClicked(View v) {
+        /*Intent intent = new Intent(this, ObjetoActivity.class);
+
+        int posicao = listView.getAdapter().getCount();
+        Objeto objeto = (Objeto) listView.getAdapter().getItem(posicao);
+        sessaoUsuario.setObjeto(objeto);
+        startActivity(intent);*/
+
+        int posicao = listView.getAdapter().getCount();
+        GuiUtil.exibirMsg(PerfilActivity.this,String.valueOf(posicao));
+        Intent intent = new Intent(this, ObjetoActivity.class);
+        startActivity(intent);
+    }
 }

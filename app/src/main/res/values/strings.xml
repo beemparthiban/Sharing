@@ -33,15 +33,15 @@
 
 
     <string name="adcObjeto_nome_curto">Nome muito curto!</string>
-    <string name="adcEvento_descricao_curta">Descrição muito curta!</string>
+    <string name="adcObjeto_descricao_curta">Descrição muito curta!</string>
     <string name="adc_objeto_sucesso">Objeto cadastrado com sucesso!</string>
 
-    <string name="addEvento_edt_descricao">Insira a descrição! </string>
+    <string name="addObjeto_edt_descricao">Insira a descrição! </string>
     <string name="addEvento_edt_data_inicial">Insira a data inicial!</string>
     <string name="addEvento_edt_data_final">Insira a data final!</string>
     <string name="addEvento_edt_hora_inicial">Insira a hora inicial!</string>
     <string name="addEvento_edt_hota_final">Insira a hora final!</string>
-    <string name="addEvento_edt_descricao_curta">A descrição deve ter mais de 4 caracteres!</string>
+    <string name="addObjeto_edt_descricao_curta">A descrição deve ter mais de 4 caracteres!</string>
     <string name="addEvento_edt_data_hora_erro">Data/Hora não válidos!</string>
 
 
@@ -54,7 +54,7 @@
     <string name="amigo">Amigo</string>
     <string name="disciplina">Disciplina</string>
     <string name="nota">Nota</string>
-    <string name="objeto">Evento</string>
+    <string name="objeto">Objeto</string>
 
     <!-- Text -->
     <string name="contagem_regressiva">Próximos objetos:\n</string>

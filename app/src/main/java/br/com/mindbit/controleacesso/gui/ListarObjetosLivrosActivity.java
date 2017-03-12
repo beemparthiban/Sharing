@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.view.View;
 import android.widget.EditText;
 import android.widget.ListView;
 
@@ -29,7 +30,7 @@ public class ListarObjetosLivrosActivity  extends AppCompatActivity {
     private ObjetoNegocio objetoNegocio;
     private SessaoUsuario sessao;
     private Pessoa pessoaLogada;
-    private EventoAdapter adapter;
+    private ObjetoAdapter adapter;
 
 
     protected void onCreate(Bundle savedInstanceState){
@@ -48,7 +49,7 @@ public class ListarObjetosLivrosActivity  extends AppCompatActivity {
         } catch (MindbitException e) {
             GuiUtil.exibirMsg(ListarObjetosLivrosActivity.this, e.getMessage());
         }
-        adapter = new EventoAdapter(this,listItems);
+        adapter = new ObjetoAdapter(this,listItems);
 
         campoPesquisa.addTextChangedListener(new TextWatcher() {
 
@@ -83,17 +84,27 @@ public class ListarObjetosLivrosActivity  extends AppCompatActivity {
         int id = pessoaLogada.getId();
         eventosEncontrados = (ArrayList<Objeto>) objetoNegocio.consultarNomeDescricaoParcialCategoria(id, textToSearch, Categoria.LIVROS);
 
-        adapter = new EventoAdapter(this, eventosEncontrados);
+        adapter = new ObjetoAdapter(this, eventosEncontrados);
         listView.setAdapter(adapter);
     }
 
     public void initList() throws MindbitException {
         eventos = objetoNegocio.listarObjetosCategorias(pessoaLogada.getId(),Categoria.LIVROS);
 
-        adapter = new EventoAdapter(this, eventos);
+        adapter = new ObjetoAdapter(this, eventos);
 
         listView.setAdapter(adapter);
     }
 
+    public void onObjetoClicked(View v) {
+        /*Intent intent = new Intent(this, ObjetoActivity.class);
+
+        int posicao = listView.getAdapter().getCount();
+        Objeto objeto = (Objeto) listView.getAdapter().getItem(posicao);
+        sessaoUsuario.setObjeto(objeto);
+        startActivity(intent);*/
+        int posicao = listView.getAdapter().getCount();
+        GuiUtil.exibirMsg(ListarObjetosLivrosActivity.this,String.valueOf(posicao));
+    }
 
 }
