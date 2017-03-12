@@ -170,25 +170,33 @@ public class PerfilActivity extends AppCompatActivity
             startActivity(i);
 
         } else if(id == R.id.nav_meus_objetos) {
-            Intent i = new Intent(this, PesquisarEventoActivity.class);
+            Intent i = new Intent(this, MeusObjetosActivity.class);
             startActivity(i);
 
         }else if(id == R.id.nav_proximas_devolucoes) {
             Intent i = new Intent(this,AddObjetoActivity.class);
             startActivity(i);
 
-        } else if (id == R.id.nav_share) {
-            Intent i = new Intent(this, SobreActivity.class);
+        } else if (id == R.id.nav_ferramentas) {
+            Intent i = new Intent(this, ListarObjetosFerramentasActivity.class);
             startActivity(i);
 
         } else if (id == R.id.nav_cozinha) {
-           Intent i = new Intent(this,SobreActivity.class);
+           Intent i = new Intent(this,ListarObjetosCozinhaActivity.class);
             startActivity(i);
 
         } else if (id == R.id.nav_jogos) {
-            Intent i = new Intent(this,SobreActivity.class);
+            Intent i = new Intent(this,ListarObjetosJogosActivity.class);
             startActivity(i);
-
+        }else if (id == R.id.nav_livros) {
+            Intent i = new Intent(this, ListarObjetosLivrosActivity.class);
+            startActivity(i);
+        }else if (id == R.id.nav_viagem) {
+            Intent i = new Intent(this, ListarObjetosViagemActivity.class);
+            startActivity(i);
+        }else if (id == R.id.nav_outros) {
+            Intent i = new Intent(this, ListarObjetosOutrosActivity.class);
+            startActivity(i);
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -199,14 +207,14 @@ public class PerfilActivity extends AppCompatActivity
     public void searchItem(String textToSearch) throws MindbitException {
 
         int id = pessoaLogada.getId();
-        eventosEncontrados = (ArrayList<Objeto>) objetoNegocio.consultarNomeDescricaoParcial(id, textToSearch);
+        eventosEncontrados = (ArrayList<Objeto>) objetoNegocio.consultarNomeDescricaoParcial(pessoaLogada.getId(),textToSearch);
 
         adapter = new EventoAdapter(this, eventosEncontrados);
         listView.setAdapter(adapter);
     }
 
     public void initList() throws MindbitException {
-        eventosPessoa = objetoNegocio.listarObjetos();
+        eventosPessoa = objetoNegocio.listarObjetos(pessoaLogada.getId());
 
         adapter = new EventoAdapter(this, eventosPessoa);
 

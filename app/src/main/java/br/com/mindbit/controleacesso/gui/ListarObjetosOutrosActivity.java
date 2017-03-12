@@ -10,6 +10,7 @@ import android.widget.ListView;
 import java.util.ArrayList;
 
 import br.com.mindbit.R;
+import br.com.mindbit.controleacesso.dominio.Categoria;
 import br.com.mindbit.controleacesso.dominio.Objeto;
 import br.com.mindbit.controleacesso.dominio.Pessoa;
 import br.com.mindbit.controleacesso.negocio.ObjetoNegocio;
@@ -17,8 +18,8 @@ import br.com.mindbit.controleacesso.negocio.SessaoUsuario;
 import br.com.mindbit.infra.gui.GuiUtil;
 import br.com.mindbit.infra.gui.MindbitException;
 
-public class PesquisarEventoActivity extends AppCompatActivity {
-    private ArrayList<Objeto> eventosPessoa;
+public class ListarObjetosOutrosActivity extends AppCompatActivity{
+    private ArrayList<Objeto> eventos;
     private ArrayList<Objeto> eventosEncontrados;
     private ArrayList<Objeto> listItems = new ArrayList<>();
 
@@ -31,20 +32,21 @@ public class PesquisarEventoActivity extends AppCompatActivity {
     private EventoAdapter adapter;
 
 
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
 
         sessao = SessaoUsuario.getInstancia();
         pessoaLogada = sessao.getPessoaLogada();
 
         objetoNegocio = ObjetoNegocio.getInstancia(this);
-        setContentView(R.layout.activity_pesquisar_evento);
+        setContentView(R.layout.activity_listar_objetos);
+
         listView = (ListView)findViewById(R.id.listview_eventos);
         campoPesquisa = (EditText)findViewById(R.id.edtsearch);
         try {
             initList();
         } catch (MindbitException e) {
-            GuiUtil.exibirMsg(PesquisarEventoActivity.this, e.getMessage());
+            GuiUtil.exibirMsg(ListarObjetosOutrosActivity.this, e.getMessage());
         }
         adapter = new EventoAdapter(this,listItems);
 
@@ -69,7 +71,7 @@ public class PesquisarEventoActivity extends AppCompatActivity {
                         searchItem(s.toString().trim());
                     }
                 } catch (MindbitException e) {
-                    GuiUtil.exibirMsg(PesquisarEventoActivity.this, e.getMessage());
+                    GuiUtil.exibirMsg(ListarObjetosOutrosActivity.this, e.getMessage());
                 }
 
             }
@@ -79,17 +81,19 @@ public class PesquisarEventoActivity extends AppCompatActivity {
     public void searchItem(String textToSearch) throws MindbitException {
 
         int id = pessoaLogada.getId();
-        eventosEncontrados = (ArrayList<Objeto>) objetoNegocio.consultarNomeDescricaoParcial(id, textToSearch);
+        eventosEncontrados = (ArrayList<Objeto>) objetoNegocio.consultarNomeDescricaoParcialCategoria(id, textToSearch, Categoria.OUTROS);
 
         adapter = new EventoAdapter(this, eventosEncontrados);
         listView.setAdapter(adapter);
     }
 
     public void initList() throws MindbitException {
-        eventosPessoa = objetoNegocio.listarObjetos();
+        eventos = objetoNegocio.listarObjetosCategorias(pessoaLogada.getId(),Categoria.OUTROS);
 
-        adapter = new EventoAdapter(this, eventosPessoa);
+        adapter = new EventoAdapter(this, eventos);
 
         listView.setAdapter(adapter);
     }
+
+
 }

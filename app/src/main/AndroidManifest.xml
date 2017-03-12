@@ -25,29 +25,29 @@
             android:label="@string/title_activity_navigation"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".controleacesso.gui.PesquisarEventoActivity"
-            android:label="@string/title_activity_pesquisar_evento" />
-        <activity
-            android:name=".controleacesso.gui.CompartilharEventoActivity"
-            android:label="Compartilhar Eventos" />
-        <activity
-            android:name=".controleacesso.gui.EscolherAmigoActivity"
-            android:label="Compartilhar Eventos" />
+            android:name=".controleacesso.gui.MeusObjetosActivity"
+            android:label="Meus Objetos" />
         <activity
             android:name=".controleacesso.gui.AddObjetoActivity"
-            android:label="Adicionar Evento" />
+            android:label="Adicionar Objeto" />
         <activity
-            android:name=".controleacesso.gui.AddAmigoActivity"
-            android:label="Adicionar Amigo" />
+             android:name=".controleacesso.gui.ListarObjetosFerramentasActivity"
+             android:label="Ferramentas"/>
         <activity
-            android:name=".controleacesso.gui.AddDisciplinaActivity"
-            android:label="Adicionar Disciplina" />
+            android:name=".controleacesso.gui.ListarObjetosLivrosActivity"
+            android:label="Livros"/>
         <activity
-            android:name=".controleacesso.gui.Pop"
-            android:theme="@style/AppTheme.Custom" />
+            android:name=".controleacesso.gui.ListarObjetosJogosActivity"
+            android:label="Jogos"/>
         <activity
-             android:name=".controleacesso.gui.SobreActivity"
-             android:label="Sobre"/>
+            android:name=".controleacesso.gui.ListarObjetosCozinhaActivity"
+            android:label="Utensílios de Cozinha"/>
+        <activity
+            android:name=".controleacesso.gui.ListarObjetosViagemActivity"
+            android:label="Objetos para Viagens"/>
+        <activity
+            android:name=".controleacesso.gui.ListarObjetosOutrosActivity"
+            android:label="Outros Objetos"/>
 
     </application>
 

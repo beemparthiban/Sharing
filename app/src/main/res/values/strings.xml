@@ -59,7 +59,7 @@
     <!-- Text -->
     <string name="contagem_regressiva">Próximos objetos:\n</string>
     <string name="contagem_nula">não há objetos futuros \n\nDescanse ;)</string>
-    <string name="title_activity_navigation"></string>
+    <string name="title_activity_navigation">Sharing!</string>
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>

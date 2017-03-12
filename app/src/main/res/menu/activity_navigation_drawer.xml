@@ -22,11 +22,11 @@
     <item android:title="Categorias">
         <menu>
             <item
-                android:id="@+id/nav_share"
+                android:id="@+id/nav_ferramentas"
                 android:icon="@drawable/ic_menu_share"
                 android:title="Ferramentas" />
             <item
-                android:id="@+id/nav_sobre"
+                android:id="@+id/nav_livros"
                 android:icon="@drawable/ic_sobre"
                 android:title="Livros" />
 

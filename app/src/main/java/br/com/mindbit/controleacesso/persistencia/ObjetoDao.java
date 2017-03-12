@@ -130,13 +130,51 @@ public class ObjetoDao {
      * @return                          lista de eventos contendo partes do nome procurado
      * @throws MindbitException
      */
-    public ArrayList<Objeto> buscarNomeDescricaoParcial(int id, String nome) throws MindbitException {
+    public ArrayList<Objeto> buscarNomeDescricaoParcialPessoa(int id, String nome) throws MindbitException {
         SQLiteDatabase db = databaseHelper.getReadableDatabase();
 
         ArrayList<Objeto> listaObjetos = new ArrayList<Objeto>();
 
         Cursor cursor = db.rawQuery("SELECT * FROM " + databaseHelper.TABELA_OBJETO + " WHERE " + databaseHelper.OBJETO_DONO_ID + " = ? AND ("
                 + databaseHelper.OBJETO_NOME + " LIKE ? OR " + databaseHelper.OBJETO_DESCRICAO + " LIKE ?)", new String[]{String.valueOf(id), "%" + nome + "%", "%" + nome + "%"});
+
+        Objeto objeto = null;
+        if(cursor.getCount() > 0){
+            while(cursor.moveToNext()){
+                objeto = criarObjeto(cursor);
+                listaObjetos.add(objeto);
+            }
+        }
+        cursor.close();
+        return listaObjetos;
+    }
+
+    public ArrayList<Objeto> buscarNomeDescricaoParcialCategoria(int id, String nome, int categoria) throws MindbitException{
+        SQLiteDatabase db = databaseHelper.getReadableDatabase();
+        ArrayList<Objeto> listaObjetos = new ArrayList<>();
+
+        Cursor cursor = db.rawQuery("SELECT * FROM "+ databaseHelper.TABELA_OBJETO + " WHERE " + databaseHelper.OBJETO_CATEGORIA +
+                " =? AND " + databaseHelper.OBJETO_DONO_ID + " != ? AND " + databaseHelper.OBJETO_ESTADO + " = ? AND (" +
+                databaseHelper.OBJETO_NOME + " LIKE ? OR " + databaseHelper.OBJETO_DESCRICAO + " LIKE ?)", new String[]{String.valueOf(categoria),String.valueOf(id),"0", "%" + nome + "%", "%" + nome + "%"});
+        Objeto objeto = null;
+        if(cursor.getCount() > 0){
+            while(cursor.moveToNext()){
+                objeto = criarObjeto(cursor);
+                listaObjetos.add(objeto);
+            }
+        }
+        cursor.close();
+        return listaObjetos;
+    }
+
+    public ArrayList<Objeto> buscarNomeDescricaoParcial(int id, String nome) throws MindbitException {
+        SQLiteDatabase db = databaseHelper.getReadableDatabase();
+
+        ArrayList<Objeto> listaObjetos = new ArrayList<Objeto>();
+
+        Cursor cursor = db.rawQuery("SELECT * FROM " + databaseHelper.TABELA_OBJETO + " WHERE ("
+                + databaseHelper.OBJETO_NOME + " LIKE ? OR " + databaseHelper.OBJETO_DESCRICAO + " LIKE ?) AND " +
+                databaseHelper.OBJETO_DONO_ID + " != ?", new String[]{ "%" + nome + "%", "%" + nome + "%", String.valueOf(id)});
 
         Objeto objeto = null;
         if(cursor.getCount() > 0){
@@ -168,7 +206,7 @@ public class ObjetoDao {
     }
 
 
-    public ArrayList<Objeto> listarObjetos() throws MindbitException{
+    public ArrayList<Objeto> listarObjetos(int id) throws MindbitException{
         Objeto objeto = null;
         ArrayList<Objeto> listaObjetos = new ArrayList<>();
 
@@ -176,11 +214,56 @@ public class ObjetoDao {
 
         //seleciona objetos disponiveis
         Cursor cursor = db.rawQuery("SELECT * FROM "+ databaseHelper.TABELA_OBJETO + " WHERE " + databaseHelper.OBJETO_ESTADO +
-        " =?", new String[]{"0"});
+        " =? AND " + databaseHelper.OBJETO_DONO_ID + " != ?", new String[]{"0",String.valueOf(id)});
 
         //seleciona todos os objetos
         //Cursor cursor = db.rawQuery("SELECT * FROM "+ databaseHelper.TABELA_OBJETO ,null);
 
+
+
+        if(cursor.getCount() > 0){
+            while(cursor.moveToNext()){
+                objeto = criarObjeto(cursor);
+                listaObjetos.add(objeto);
+            }
+        }
+
+        db.close();
+        cursor.close();
+        return listaObjetos;
+    }
+
+    public ArrayList<Objeto> listarObjetosCategorias(int id,int categoria) throws MindbitException{
+        Objeto objeto = null;
+        ArrayList<Objeto> listaObjetos = new ArrayList<>();
+
+        SQLiteDatabase db = databaseHelper.getReadableDatabase();
+
+        //seleciona objetos ferramentas
+        Cursor cursor = db.rawQuery("SELECT * FROM "+ databaseHelper.TABELA_OBJETO + " WHERE " + databaseHelper.OBJETO_CATEGORIA +
+                " =? AND " + databaseHelper.OBJETO_DONO_ID + " != ?", new String[]{String.valueOf(categoria),String.valueOf(id)});
+
+
+        if(cursor.getCount() > 0){
+            while(cursor.moveToNext()){
+                objeto = criarObjeto(cursor);
+                listaObjetos.add(objeto);
+            }
+        }
+
+        db.close();
+        cursor.close();
+        return listaObjetos;
+    }
+
+    public ArrayList<Objeto> listarObjetosPessoa(int idDono) throws MindbitException{
+        Objeto objeto = null;
+        ArrayList<Objeto> listaObjetos = new ArrayList<>();
+
+        SQLiteDatabase db = databaseHelper.getReadableDatabase();
+
+        Cursor cursor = db.rawQuery("SELECT * FROM " + databaseHelper.TABELA_OBJETO + " WHERE " + databaseHelper.OBJETO_DONO_ID + " = ?"
+                , new String[]{String.valueOf(idDono)});
 
 
         if(cursor.getCount() > 0){

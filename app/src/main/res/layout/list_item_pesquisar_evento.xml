@@ -40,10 +40,12 @@
             android:textStyle="bold"
             android:text="nome do objeto"
             android:layout_weight="0.26"
-            android:layout_marginTop="-6dp" />
+            android:layout_marginTop="-6dp"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"/>
     </LinearLayout>
 
     <TextView
+        android:text="Descrição"
         android:id="@+id/txtitem_descricao_evento"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -52,5 +54,23 @@
         android:layout_marginLeft="46dp"
         android:textSize="14sp"
         android:layout_weight="0.02" />
+
+    <TextView
+        android:text="Categoria "
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/txtitem_categoria_objeto"
+        android:layout_marginRight="16dp"
+        android:layout_marginLeft="46dp"/>
+
+    <TextView
+        android:text="Estado"
+        android:id="@+id/txtitem_estado_objeto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="16dp"
+        android:layout_marginLeft="46dp"
+        android:textSize="15sp"
+        android:textColor="@color/Blue_700"/>
 
 </LinearLayout>
