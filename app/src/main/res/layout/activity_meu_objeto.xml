@@ -22,7 +22,7 @@
             android:layout_height="200dp"
             android:src="@drawable/object_default"
             android:background="@drawable/rectangule_white"
-            android:onClick="onButtonClickObjeto"
+            android:onClick="onButtonClickMeuObjeto"
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
             />

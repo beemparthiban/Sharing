@@ -227,17 +227,6 @@ public class PerfilActivity extends AppCompatActivity
 
     }
 
-   /* public void onButtonClickProjeto(View v){
-
-        if (v.getId() == R.id.objeto_imagem_principal){
-            Intent intent= new Intent(this, ListaImagensObjeto.class);
-            sessaoUsuario.setObjeto(objeto);
-            startActivity(intent);
-        }
-    }*/
-
-
-
     @Override
     public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
         Objeto objeto = (Objeto) listView.getAdapter().getItem(position);

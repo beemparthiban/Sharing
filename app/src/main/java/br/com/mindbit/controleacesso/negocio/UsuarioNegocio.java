@@ -59,7 +59,7 @@ public class UsuarioNegocio {
      * @param id id da pessoa que desejamos encontrar
      * @return pessoa que foi encontrada com o id informado
      */
-    public Pessoa pesquisarPorId(int id) {
+    public Pessoa pesquisarPorId(int id) throws MindbitException{
         Pessoa pessoa = null;
         pessoa = usuarioDao.buscarPessoaId(id);
         return pessoa;

@@ -55,6 +55,9 @@
         <activity
             android:name=".controleacesso.gui.MeuObjetoActivity"
             android:label="@string/app_nome"/>
+        <activity
+            android:name=".controleacesso.gui.ListaImagensObjetoActivity"
+            android:label="Imagens"/>
     </application>
 
 </manifest>

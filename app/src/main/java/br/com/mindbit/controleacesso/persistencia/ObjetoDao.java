@@ -87,6 +87,8 @@ public class ObjetoDao {
         objeto.setNome(cursor.getString(1));
         objeto.setDescricao(cursor.getString(4));
         objeto.setFoto(Uri.parse(cursor.getString(5)));
+        objeto.setIdDono(cursor.getInt(6));
+        objeto.setIdAlugador(cursor.getInt(7));
 
         Categoria categoria = Categoria.values()[cursor.getInt(2)];
         objeto.setCategoriaEnum(categoria);

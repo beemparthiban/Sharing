@@ -1,8 +1,10 @@
 package br.com.mindbit.controleacesso.gui;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -29,6 +31,7 @@ public class MeuObjetoActivity extends AppCompatActivity {
     private TextView textViewEstado;
     private TextView textViewAlugador;
 
+    private int idObjeto;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,7 +40,7 @@ public class MeuObjetoActivity extends AppCompatActivity {
         setContentView(R.layout.activity_meu_objeto);
 
         Bundle bundle = getIntent().getExtras();
-        int idObjeto = bundle.getInt("selected-item");
+        idObjeto = bundle.getInt("selected-item");
 
         imageView = (ImageView) findViewById(R.id.meu_objeto_imagem_principal);
         textViewNome = (TextView) findViewById(R.id.nome_meu_objeto_show);
@@ -52,19 +55,19 @@ public class MeuObjetoActivity extends AppCompatActivity {
         objetoNegocio = ObjetoNegocio.getInstancia(this);
 
         Objeto objeto = getObjeto(idObjeto);
-        String nomeAlugador;
+        String informacoesAlugador;
         if (objeto.getIdAlugador()!=0){
             Pessoa objetoAlugador = getPessoa(objeto.getIdAlugador());
-            nomeAlugador = objetoAlugador.getNome();
+            informacoesAlugador = objetoAlugador.getNome()+"\n"+objetoAlugador.getEmail();
         }else {
-            nomeAlugador = "  - - -";
+            informacoesAlugador = "  - - -";
         }
 
         textViewNome.setText(objeto.getNome());
         textViewDescricao.setText(objeto.getDescricao());
         textViewCategoria.setText(objeto.getCategoriaEnum().toString());
         textViewEstado.setText(objeto.getEstadoEnum().toString());
-        textViewAlugador.setText(nomeAlugador);
+        textViewAlugador.setText(informacoesAlugador);
     }
 
 
@@ -81,8 +84,22 @@ public class MeuObjetoActivity extends AppCompatActivity {
     }
 
     public Pessoa getPessoa(int idDono){
-        Pessoa pessoa = usuarioNegocio.pesquisarPorId(idDono);
+        Pessoa pessoa = new Pessoa();
+        try{
+            pessoa = usuarioNegocio.pesquisarPorId(idDono);
+        }catch (MindbitException e){
+            Log.d("MeuObjetoActivity",e.getMessage());
+        }
         return pessoa;
+    }
+
+    public void onButtonClickMeuObjeto(View v){
+
+        if (v.getId() == R.id.meu_objeto_imagem_principal){
+            Intent intent= new Intent(this, ListaImagensObjetoActivity.class);
+            intent.putExtra("imagem", (getObjeto(idObjeto).getId()));
+            startActivity(intent);
+        }
     }
 
 }

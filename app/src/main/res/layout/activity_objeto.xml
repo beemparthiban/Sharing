@@ -24,6 +24,7 @@
             android:background="@drawable/rectangule_white"
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
+            android:onClick="onButtonClickProjeto"
             />
 
         <TextView
