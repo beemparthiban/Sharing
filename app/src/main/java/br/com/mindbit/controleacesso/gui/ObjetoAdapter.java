@@ -55,8 +55,13 @@ public class ObjetoAdapter extends BaseAdapter {
             ((TextView) view.findViewById(R.id.txtitem_descricao_evento)).setText(objeto.getDescricao());
             ((TextView) view.findViewById(R.id.txtitem_categoria_objeto)).setText(objeto.getCategoriaEnum().toString());
             ((TextView) view.findViewById(R.id.txtitem_estado_objeto)).setText(objeto.getEstadoEnum().toString());
-            ((ImageView) view.findViewById(R.id.img_objeto)).setImageResource(R.drawable.object_default);
-            //((ImageView) view.findViewById(R.id.img_objeto)).setImageURI(objeto.getFoto());
+            //((ImageView) view.findViewById(R.id.img_objeto)).setImageResource(R.drawable.object_default);
+            if (objeto.getFoto() != null){
+                ((ImageView) view.findViewById(R.id.img_objeto)).setImageURI(objeto.getFoto());
+            }else{
+                ((ImageView) view.findViewById(R.id.img_objeto)).setImageURI(AddObjetoActivity.FOTO_PADRAO);
+            }
+
 
 
 

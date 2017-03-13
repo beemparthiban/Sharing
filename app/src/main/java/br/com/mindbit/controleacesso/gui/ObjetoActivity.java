@@ -57,6 +57,7 @@ public class ObjetoActivity extends AppCompatActivity {
         textViewDescricao.setText(objeto.getDescricao());
         textViewPlataforma.setText(objeto.getCategoriaEnum().toString());
         textViewAplicacao.setText(informacoesDono);
+        imageView.setImageURI(objeto.getFoto());
     }
 
     public Objeto getObjeto(int idObjeto) {
@@ -84,12 +85,12 @@ public class ObjetoActivity extends AppCompatActivity {
     }
 
     public void onButtonClickProjeto(View v){
-
+    /*
         if (v.getId() == R.id.objeto_imagem_principal){
             Intent intent= new Intent(this, ListaImagensObjetoActivity.class);
             intent.putExtra("imagem", (getObjeto(idObjeto).getId()));
             startActivity(intent);
 
-        }
+        }*/
     }
 }

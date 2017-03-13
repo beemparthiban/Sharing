@@ -54,9 +54,7 @@ public class Pessoa {
     public String getCpf(){return this.cpf;}
     public void setCpf(String cpf){ this.cpf = cpf; }
 
-    public Uri getFoto() {
-        return foto;
-    }
+    public Uri getFoto() {return this.foto;}
     public void setFoto(Uri foto) {this.foto = foto;}
 
     public int getPontuacao(){return pontuacao;}

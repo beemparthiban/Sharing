@@ -150,7 +150,7 @@ public class AddObjetoActivity extends AppCompatActivity{
                 objeto.setDescricao(descricaoObjeto);
                 objeto.setCategoriaEnum(categoriaObjeto);
                 objeto.setEstadoEnum(estadoObjeto);
-                objeto.setFoto(FOTO_PADRAO);
+                objeto.setFoto(foto);
                 objetoNegocio.validarCadastroObjeto(objeto);
                 GuiUtil.exibirMsg(this, getString(R.string.adc_objeto_sucesso));
                 startPerfilActivity();
@@ -180,7 +180,7 @@ public class AddObjetoActivity extends AppCompatActivity{
         }
     }
 
-    public static final Uri FOTO_PADRAO = Uri.parse("android.resource://ufrpe.br.sharing/"+R.drawable.object_default);
+    public static final Uri FOTO_PADRAO = Uri.parse("android.resource://br.com.mindbit/"+R.drawable.object_default);
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {

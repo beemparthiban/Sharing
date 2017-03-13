@@ -69,10 +69,10 @@ public class PerfilActivity extends AppCompatActivity
         TextView pontuacao = (TextView) view.findViewById(R.id.txtPontuacaoPerfil);
         ImageView fotoPerfil = (ImageView) view.findViewById(R.id.fotoPerfil);
 
-        if (pessoaLogada.getFoto() != null){
-            fotoPerfil.setImageURI(CadastroActivity.FOTO_PADRAO);
-        }else{
+        if (pessoaLogada.getFoto() == null){
             fotoPerfil.setImageURI(pessoaLogada.getFoto());
+        }else{
+            fotoPerfil.setImageURI(CadastroActivity.FOTO_PADRAO);
             //não tá setando a foto
         }
         nome.setText(pessoaLogada.getNome());

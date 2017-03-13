@@ -68,6 +68,7 @@ public class MeuObjetoActivity extends AppCompatActivity {
         textViewCategoria.setText(objeto.getCategoriaEnum().toString());
         textViewEstado.setText(objeto.getEstadoEnum().toString());
         textViewAlugador.setText(informacoesAlugador);
+        imageView.setImageURI(objeto.getFoto());
     }
 
 
@@ -94,12 +95,12 @@ public class MeuObjetoActivity extends AppCompatActivity {
     }
 
     public void onButtonClickMeuObjeto(View v){
-
+     /*
         if (v.getId() == R.id.meu_objeto_imagem_principal){
             Intent intent= new Intent(this, ListaImagensObjetoActivity.class);
             intent.putExtra("imagem", (getObjeto(idObjeto).getId()));
             startActivity(intent);
-        }
+        }*/
     }
 
 }

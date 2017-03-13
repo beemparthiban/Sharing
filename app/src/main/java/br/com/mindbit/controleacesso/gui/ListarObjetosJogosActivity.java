@@ -45,7 +45,7 @@ public class ListarObjetosJogosActivity extends AppCompatActivity implements Ada
         setContentView(R.layout.activity_listar_objetos);
 
         listView = (ListView)findViewById(R.id.listview_eventos);
-        listView.setOnItemClickListener(this);
+        //listView.setOnItemClickListener(this);
         campoPesquisa = (EditText)findViewById(R.id.edtsearch);
         try {
             initList();
