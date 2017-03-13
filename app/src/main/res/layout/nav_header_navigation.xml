@@ -38,4 +38,11 @@
         android:layout_height="wrap_content"
         android:text="@string/navigation_usario_email" />
 
+    <TextView
+        android:id="@+id/txtPontuacaoPerfil"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="-30dp"
+        android:layout_marginLeft="180dp"
+        android:text="x Pontos" />
 </LinearLayout>

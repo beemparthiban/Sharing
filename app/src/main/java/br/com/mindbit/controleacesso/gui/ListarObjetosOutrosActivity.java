@@ -1,10 +1,12 @@
 package br.com.mindbit.controleacesso.gui;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.EditText;
 import android.widget.ListView;
 
@@ -19,7 +21,7 @@ import br.com.mindbit.controleacesso.negocio.SessaoUsuario;
 import br.com.mindbit.infra.gui.GuiUtil;
 import br.com.mindbit.infra.gui.MindbitException;
 
-public class ListarObjetosOutrosActivity extends AppCompatActivity{
+public class ListarObjetosOutrosActivity extends AppCompatActivity implements AdapterView.OnItemClickListener{
     private ArrayList<Objeto> eventos;
     private ArrayList<Objeto> eventosEncontrados;
     private ArrayList<Objeto> listItems = new ArrayList<>();
@@ -43,6 +45,7 @@ public class ListarObjetosOutrosActivity extends AppCompatActivity{
         setContentView(R.layout.activity_listar_objetos);
 
         listView = (ListView)findViewById(R.id.listview_eventos);
+        listView.setOnItemClickListener(this);
         campoPesquisa = (EditText)findViewById(R.id.edtsearch);
         try {
             initList();
@@ -96,15 +99,13 @@ public class ListarObjetosOutrosActivity extends AppCompatActivity{
         listView.setAdapter(adapter);
     }
 
-    public void onObjetoClicked(View v) {
-        /*Intent intent = new Intent(this, ObjetoActivity.class);
+    @Override
+    public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
+        Objeto objeto = (Objeto) listView.getAdapter().getItem(position);
 
-        int posicao = listView.getAdapter().getCount();
-        Objeto objeto = (Objeto) listView.getAdapter().getItem(posicao);
-        sessaoUsuario.setObjeto(objeto);
-        startActivity(intent);*/
-        int posicao = listView.getAdapter().getCount();
-        GuiUtil.exibirMsg(ListarObjetosOutrosActivity.this,String.valueOf(posicao));
+        Intent intent = new Intent(ListarObjetosOutrosActivity.this, ObjetoActivity.class);
+        intent.putExtra("selected", (objeto.getId()));
+        startActivity(intent);
     }
 
 }

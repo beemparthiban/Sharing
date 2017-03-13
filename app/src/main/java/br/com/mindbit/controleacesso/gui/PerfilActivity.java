@@ -13,6 +13,7 @@ import android.text.TextWatcher;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ListView;
@@ -29,7 +30,7 @@ import br.com.mindbit.infra.gui.GuiUtil;
 import br.com.mindbit.infra.gui.MindbitException;
 
 public class PerfilActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener {
+        implements NavigationView.OnNavigationItemSelectedListener, AdapterView.OnItemClickListener {
 
     private SessaoUsuario sessaoUsuario;
     private Pessoa pessoaLogada;
@@ -61,19 +62,24 @@ public class PerfilActivity extends AppCompatActivity
         View view = navigationView.getHeaderView(0);
 
         listView = (ListView)findViewById(R.id.listview_eventos);
+        listView.setOnItemClickListener(this);
         campoPesquisa = (EditText)findViewById(R.id.edtsearch);
         TextView nome = (TextView) view.findViewById(R.id.txtNomePerfil);
         TextView email = (TextView) view.findViewById(R.id.txtEmailPerfil);
+        TextView pontuacao = (TextView) view.findViewById(R.id.txtPontuacaoPerfil);
         ImageView fotoPerfil = (ImageView) view.findViewById(R.id.fotoPerfil);
 
-        if (pessoaLogada.getFoto() == null){
-            //fotoPerfil.setImageURI(pessoaLogada.getFoto());
+        if (pessoaLogada.getFoto() != null){
             fotoPerfil.setImageURI(CadastroActivity.FOTO_PADRAO);
         }else{
-            fotoPerfil.setImageURI(CadastroActivity.FOTO_PADRAO);
+            fotoPerfil.setImageURI(pessoaLogada.getFoto());
+            //não tá setando a foto
         }
         nome.setText(pessoaLogada.getNome());
         email.setText(pessoaLogada.getEmail());
+        String pontos = String.valueOf(pessoaLogada.getPontuacao())+" pontos";
+        pontuacao.setText(pontos);
+
 
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
@@ -170,7 +176,7 @@ public class PerfilActivity extends AppCompatActivity
             startActivity(i);
 
         } else if(id == R.id.nav_meus_objetos) {
-            Intent i = new Intent(this, MeusObjetosActivity.class);
+            Intent i = new Intent(this, ListarMeusObjetosActivity.class);
             startActivity(i);
 
         }else if(id == R.id.nav_proximas_devolucoes) {
@@ -206,7 +212,6 @@ public class PerfilActivity extends AppCompatActivity
 
     public void searchItem(String textToSearch) throws MindbitException {
 
-        int id = pessoaLogada.getId();
         eventosEncontrados = (ArrayList<Objeto>) objetoNegocio.consultarNomeDescricaoParcial(pessoaLogada.getId(),textToSearch);
 
         adapter = new ObjetoAdapter(this, eventosEncontrados);
@@ -231,17 +236,14 @@ public class PerfilActivity extends AppCompatActivity
         }
     }*/
 
-    public void onObjetoClicked(View v) {
-        /*Intent intent = new Intent(this, ObjetoActivity.class);
 
-        int posicao = listView.getAdapter().getCount();
-        Objeto objeto = (Objeto) listView.getAdapter().getItem(posicao);
-        sessaoUsuario.setObjeto(objeto);
-        startActivity(intent);*/
 
-        int posicao = listView.getAdapter().getCount();
-        GuiUtil.exibirMsg(PerfilActivity.this,String.valueOf(posicao));
-        Intent intent = new Intent(this, ObjetoActivity.class);
+    @Override
+    public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
+        Objeto objeto = (Objeto) listView.getAdapter().getItem(position);
+
+        Intent intent = new Intent(PerfilActivity.this, ObjetoActivity.class);
+        intent.putExtra("selected", (objeto.getId()));
         startActivity(intent);
     }
 }

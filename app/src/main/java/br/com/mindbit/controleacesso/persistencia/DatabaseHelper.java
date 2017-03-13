@@ -43,6 +43,13 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public static final String OBJETO_DONO_ID = "id_dono_objeto";
     public static final String OBJETO_ALUGADOR_ID = "id_alugador_objeto";
 
+    //TABELA EMPRESTIMO
+    public static final String TABELA_EMPRESTIMO = "tabela_emprestimo";
+    public static final String USUARIO_EMPRESTADOR_ID = "id_pessoa_usuario";
+    public static final String USO_OBJETO_ID = "id_objeto";
+    public static final String USUARIO_ALUGADOR_ID = "id_alugador_objeto";
+
+
 
 
     @Override
@@ -51,6 +58,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.execSQL(ScriptTableSQL.getTabelaPessoa());
         db.execSQL(ScriptTableSQL.getTabelaUsuario());
         db.execSQL(ScriptTableSQL.getTabelaObjeto());
+        db.execSQL(ScriptTableSQL.getTabelaEmprestimo());
 
     }
 
@@ -59,6 +67,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.execSQL("drop table if exists " + TABELA_USUARIO);
         db.execSQL("drop table if exists " + TABELA_PESSOA);
         db.execSQL("drop table if exists " + TABELA_OBJETO);
+        db.execSQL("drop table if exists " + TABELA_EMPRESTIMO);
         onCreate(db);
     }
 

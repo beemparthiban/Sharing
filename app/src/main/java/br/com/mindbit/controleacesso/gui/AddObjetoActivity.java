@@ -180,7 +180,7 @@ public class AddObjetoActivity extends AppCompatActivity{
         }
     }
 
-    public static final Uri FOTO_PADRAO = Uri.parse("android.resource://ufrpe.br.sharing/"+R.drawable.user);
+    public static final Uri FOTO_PADRAO = Uri.parse("android.resource://ufrpe.br.sharing/"+R.drawable.object_default);
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {

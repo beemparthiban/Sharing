@@ -25,7 +25,7 @@
             android:label="@string/title_activity_navigation"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".controleacesso.gui.MeusObjetosActivity"
+            android:name=".controleacesso.gui.ListarMeusObjetosActivity"
             android:label="Meus Objetos" />
         <activity
             android:name=".controleacesso.gui.AddObjetoActivity"
@@ -51,6 +51,9 @@
 
         <activity
             android:name=".controleacesso.gui.ObjetoActivity"
+            android:label="@string/app_nome"/>
+        <activity
+            android:name=".controleacesso.gui.MeuObjetoActivity"
             android:label="@string/app_nome"/>
     </application>
 

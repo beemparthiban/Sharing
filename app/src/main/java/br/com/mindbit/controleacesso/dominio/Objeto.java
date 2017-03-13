@@ -21,11 +21,11 @@ public class Objeto {
         //this.dataInicio=null;
         //this.dataFim=null;
         //this.nivelPrioridadeEnum=null;
-        this.idAlugador = 0;
+        //this.idAlugador = 0;
         this.nome = null;
         this.categoriaEnum = null;
         this.estadoEnum = Estado.DISPONIVEL;
-        this.categoriaEnum = Categoria.OUTROS;
+        this.categoriaEnum = null;
         this.descricao = null;
         this.foto = null;
 

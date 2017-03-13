@@ -55,6 +55,9 @@ public class ObjetoAdapter extends BaseAdapter {
             ((TextView) view.findViewById(R.id.txtitem_descricao_evento)).setText(objeto.getDescricao());
             ((TextView) view.findViewById(R.id.txtitem_categoria_objeto)).setText(objeto.getCategoriaEnum().toString());
             ((TextView) view.findViewById(R.id.txtitem_estado_objeto)).setText(objeto.getEstadoEnum().toString());
+            ((ImageView) view.findViewById(R.id.img_objeto)).setImageResource(R.drawable.object_default);
+            //((ImageView) view.findViewById(R.id.img_objeto)).setImageURI(objeto.getFoto());
+
 
 
 
@@ -73,20 +76,6 @@ public class ObjetoAdapter extends BaseAdapter {
         cal.add(Calendar.MONTH, 1);
         return cal.getTime();
     }
-/*
-    public View setIconePrioridade(View view){
-        int nivelPrioridade = objeto.getNivelPrioridadeEnum().ordinal();
 
-        if (nivelPrioridade == 0 ) {
-            ((ImageView) view.findViewById(R.id.img_evento)).setImageResource(R.drawable.bola_verde);
-            return view;
-        }else if (nivelPrioridade == 1) {
-            ((ImageView) view.findViewById(R.id.img_evento)).setImageResource(R.drawable.bola_amarela);
-            return view;
-        }else if (nivelPrioridade == 2) {
-            ((ImageView) view.findViewById(R.id.img_evento)).setImageResource(R.drawable.bola_vermelha);
-            return view;
-        }return view;
-    }*/
 
 }

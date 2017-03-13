@@ -1,10 +1,13 @@
 package br.com.mindbit.controleacesso.gui;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.EditText;
 import android.widget.ListView;
 
@@ -18,7 +21,7 @@ import br.com.mindbit.controleacesso.negocio.SessaoUsuario;
 import br.com.mindbit.infra.gui.GuiUtil;
 import br.com.mindbit.infra.gui.MindbitException;
 
-public class MeusObjetosActivity extends AppCompatActivity {
+public class ListarMeusObjetosActivity extends AppCompatActivity implements AdapterView.OnItemClickListener{
     private ArrayList<Objeto> eventosPessoa;
     private ArrayList<Objeto> eventosEncontrados;
     private ArrayList<Objeto> listItems = new ArrayList<>();
@@ -40,13 +43,13 @@ public class MeusObjetosActivity extends AppCompatActivity {
 
         objetoNegocio = ObjetoNegocio.getInstancia(this);
         setContentView(R.layout.activity_listar_objetos);
-        //mudar pra activity meu objeto
         listView = (ListView)findViewById(R.id.listview_eventos);
+        listView.setOnItemClickListener(this);
         campoPesquisa = (EditText)findViewById(R.id.edtsearch);
         try {
             initList();
         } catch (MindbitException e) {
-            GuiUtil.exibirMsg(MeusObjetosActivity.this, e.getMessage());
+            GuiUtil.exibirMsg(ListarMeusObjetosActivity.this, e.getMessage());
         }
         adapter = new ObjetoAdapter(this,listItems);
 
@@ -71,7 +74,7 @@ public class MeusObjetosActivity extends AppCompatActivity {
                         searchItem(s.toString().trim());
                     }
                 } catch (MindbitException e) {
-                    GuiUtil.exibirMsg(MeusObjetosActivity.this, e.getMessage());
+                    GuiUtil.exibirMsg(ListarMeusObjetosActivity.this, e.getMessage());
                 }
 
             }
@@ -95,14 +98,14 @@ public class MeusObjetosActivity extends AppCompatActivity {
         listView.setAdapter(adapter);
     }
 
-    public void onObjetoClicked(View v) {
-        /*Intent intent = new Intent(this, ObjetoActivity.class);
 
-        int posicao = listView.getAdapter().getCount();
-        Objeto objeto = (Objeto) listView.getAdapter().getItem(posicao);
-        sessaoUsuario.setObjeto(objeto);
-        startActivity(intent);*/
-        int posicao = listView.getAdapter().getCount();
-        GuiUtil.exibirMsg(MeusObjetosActivity.this,String.valueOf(posicao));
+    @Override
+    public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
+
+            Objeto objeto = (Objeto) listView.getAdapter().getItem(position);
+
+            Intent intent = new Intent(ListarMeusObjetosActivity.this, MeuObjetoActivity.class);
+            intent.putExtra("selected-item", (objeto.getId()));
+            startActivity(intent);
+        }
     }
-}

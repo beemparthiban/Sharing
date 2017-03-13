@@ -46,4 +46,18 @@ public class ScriptTableSQL {
         return objetoBuilder.toString();
     }
 
+    public static String getTabelaEmprestimo(){
+
+        StringBuilder emprestimoBuilder = new StringBuilder();
+        emprestimoBuilder.append("CREATE TABLE tabela_emprestimo ( ");
+        emprestimoBuilder.append("_id_emprestimo  integer primary key autoincrement,   ");
+        emprestimoBuilder.append("id_dono_objeto  integer not null,  ");
+        emprestimoBuilder.append("id_objeto  integer not null,  ");
+        emprestimoBuilder.append("id_alugador_objeto  integer not null,  ");
+        emprestimoBuilder.append("foreign key ( id_dono_objeto ) references tabela_objeto ( id_dono_objeto ), ");
+        emprestimoBuilder.append("foreign key ( id_objeto ) references tabela_objeto ( _id_objeto ), ");
+        emprestimoBuilder.append("foreign key ( id_alugador_objeto ) references tabela_pessoa ( _id_pessoa ) );");
+        return emprestimoBuilder.toString();
+    }
+
 }

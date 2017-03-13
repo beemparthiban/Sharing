@@ -121,6 +121,23 @@ public class ObjetoDao {
         return objeto;
     }
 
+    public Objeto buscarObjetoId(long id) throws MindbitException{
+        SQLiteDatabase db;
+        db = databaseHelper.getReadableDatabase();
+
+        Objeto objeto = null;
+
+        Cursor cursor = db.rawQuery("SELECT * FROM " + databaseHelper.TABELA_OBJETO +
+            " WHERE " + databaseHelper.OBJETO_ID + " =?", new String[]{String.valueOf(id)});
+
+        if (cursor.moveToFirst()){
+            objeto = criarObjeto(cursor);
+        }
+        db.close();
+        cursor.close();
+        return objeto;
+    }
+
 
     /**
      * metodo utilizado para fazer a busca dos evento no banco atraves de pedacos do nome dos eventos

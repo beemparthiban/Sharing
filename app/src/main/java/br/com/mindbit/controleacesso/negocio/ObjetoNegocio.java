@@ -83,6 +83,10 @@ public class ObjetoNegocio {
         return objeto;
     }
 
+    public Objeto pesquisarPorId(long idObjeto) throws MindbitException{
+        Objeto objeto = objetoDao.buscarObjetoId(idObjeto);
+        return objeto;
+    }
 
 
     public void validarCadastroObjeto(Objeto objeto) throws MindbitException {
