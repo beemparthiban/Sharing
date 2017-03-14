@@ -40,10 +40,10 @@ public class EmprestimoDao {
         values.put(DatabaseHelper.EMPRESTIMO_ID_USUARIO, idUsuario);
 
         db.insert(DatabaseHelper.TABELA_EMPRESTIMO, null, values);
+
         objetoDao.alugarObjeto(idObjeto,idUsuario);
         db.close();
     }
-
 
 
 }

@@ -105,6 +105,10 @@ public class ObjetoNegocio {
         return objetoDao.listarObjetosPessoa(idDono);
     }
 
+    public void retornarObjeto(int idObjeto) throws MindbitException{
+        objetoDao.devolverObjeto(idObjeto);
+    }
+
 
     /*
     public ArrayList<Objeto> listarEventosProximo(int idPessoaCriadora) throws MindbitException {

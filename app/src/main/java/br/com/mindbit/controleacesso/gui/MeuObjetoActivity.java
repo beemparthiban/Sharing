@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -48,6 +49,7 @@ public class MeuObjetoActivity extends AppCompatActivity {
         textViewCategoria = (TextView) findViewById(R.id.categoria_meu_objeto_show);
         textViewEstado = (TextView) findViewById(R.id.estado_meu_objeto_show);
         textViewAlugador = (TextView) findViewById(R.id.alugador_meu_objeto_show);
+        Button btnRetornarObjeto = (Button)findViewById(R.id.pedir_devolucao);
 
         sessaoUsuario = SessaoUsuario.getInstancia();
         usuarioNegocio = UsuarioNegocio.getInstancia(this);
@@ -69,6 +71,13 @@ public class MeuObjetoActivity extends AppCompatActivity {
         textViewEstado.setText(objeto.getEstadoEnum().toString());
         textViewAlugador.setText(informacoesAlugador);
         imageView.setImageURI(objeto.getFoto());
+
+        btnRetornarObjeto.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                retornarObjeto();
+            }
+        });
     }
 
 
@@ -101,6 +110,15 @@ public class MeuObjetoActivity extends AppCompatActivity {
             intent.putExtra("imagem", (getObjeto(idObjeto).getId()));
             startActivity(intent);
         }*/
+    }
+
+    public void retornarObjeto(){
+        try{
+            objetoNegocio.retornarObjeto(idObjeto);
+            GuiUtil.exibirMsg(this,"Objeto devolvido");
+        }catch (MindbitException e){
+            GuiUtil.exibirMsg(this,e.getMessage());
+        }
     }
 
 }
