@@ -297,6 +297,16 @@ public class ObjetoDao {
         return listaObjetos;
     }
 
+    public void alugarObjeto(int idObjeto, int idUsuario) throws MindbitException{
+
+        SQLiteDatabase db = databaseHelper.getReadableDatabase();
+
+        Cursor cursor = db.rawQuery("UPDATE " + databaseHelper.TABELA_OBJETO + " SET " + databaseHelper.OBJETO_ESTADO +
+            " = 1 AND " + databaseHelper.OBJETO_ALUGADOR_ID + " =? WHERE " + databaseHelper.OBJETO_ID + " =?",new String[]{String.valueOf(idUsuario),String.valueOf(idObjeto)});
+
+        db.close();
+        cursor.close();
+    }
 
     /*
     public ArrayList<Objeto> listarEventoProximo(int id) throws MindbitException {

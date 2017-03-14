@@ -3,11 +3,9 @@ package br.com.mindbit.controleacesso.persistencia;
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
-import android.provider.ContactsContract;
 
-import br.com.mindbit.controleacesso.dominio.Objeto;
-import br.com.mindbit.controleacesso.dominio.Pessoa;
 import br.com.mindbit.controleacesso.negocio.SessaoUsuario;
+import br.com.mindbit.infra.gui.MindbitException;
 
 public class EmprestimoDao {
     private static DatabaseHelper databaseHelper;
@@ -33,19 +31,19 @@ public class EmprestimoDao {
 
     Epessoa - usado para identi
      */
-    public void cadastrarEmprestimo(Pessoa emprestadorPessoa, Objeto objeto, Pessoa alugadorPessoa){
+    public void cadastrarEmprestimo(int idUsuario, int idObjeto, int idDono) throws MindbitException{
         SQLiteDatabase db = databaseHelper.getWritableDatabase();
         ContentValues values = new ContentValues();
 
-        long foreing_key_id_objeto = db.insert(DatabaseHelper.TABELA_OBJETO, null, values);
-        long foreing_key_id_dono_objeto = db.insert(DatabaseHelper.TABELA_PESSOA, null, values);
-        long foreing_key_id_alugador_objeto = db.insert(DatabaseHelper.TABELA_OBJETO, null, values);
-
-        values.put(DatabaseHelper.USUARIO_EMPRESTADOR_ID, foreing_key_id_dono_objeto);
-        values.put(DatabaseHelper.USO_OBJETO_ID, foreing_key_id_objeto);
-        values.put(DatabaseHelper.USUARIO_ALUGADOR_ID, foreing_key_id_alugador_objeto);
+        values.put(DatabaseHelper.EMPRESTIMO_DONO_OBJETO_ID, idDono);
+        values.put(DatabaseHelper.EMPRESTIMO_OBJETO_ID, idObjeto);
+        values.put(DatabaseHelper.EMPRESTIMO_ID_USUARIO, idUsuario);
 
         db.insert(DatabaseHelper.TABELA_EMPRESTIMO, null, values);
+        objetoDao.alugarObjeto(idObjeto,idUsuario);
         db.close();
     }
+
+
+
 }

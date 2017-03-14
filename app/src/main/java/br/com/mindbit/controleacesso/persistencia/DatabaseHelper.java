@@ -45,11 +45,10 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     //TABELA EMPRESTIMO
     public static final String TABELA_EMPRESTIMO = "tabela_emprestimo";
-    public static final String USUARIO_EMPRESTADOR_ID = "id_pessoa_usuario";
-    public static final String USO_OBJETO_ID = "id_objeto";
-    public static final String USUARIO_ALUGADOR_ID = "id_alugador_objeto";
-
-
+    public static final String EMPRESTIMO_ID = "_id_emprestimo";
+    public static final String EMPRESTIMO_DONO_OBJETO_ID = "id_dono_objeto";
+    public static final String EMPRESTIMO_OBJETO_ID = "id_objeto";
+    public static final String EMPRESTIMO_ID_USUARIO = "id_pessoa_usuario";
 
 
     @Override

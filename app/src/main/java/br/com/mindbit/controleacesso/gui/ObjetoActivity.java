@@ -6,12 +6,14 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import br.com.mindbit.R;
 import br.com.mindbit.controleacesso.dominio.Objeto;
 import br.com.mindbit.controleacesso.dominio.Pessoa;
+import br.com.mindbit.controleacesso.negocio.EmprestimoNegocio;
 import br.com.mindbit.controleacesso.negocio.ObjetoNegocio;
 import br.com.mindbit.controleacesso.negocio.SessaoUsuario;
 import br.com.mindbit.controleacesso.negocio.UsuarioNegocio;
@@ -24,7 +26,10 @@ public class ObjetoActivity extends AppCompatActivity {
     private ObjetoNegocio objetoNegocio;
     private UsuarioNegocio usuarioNegocio;
 
+    private EmprestimoNegocio emprestimoNegocio;
+
     private int idObjeto;
+    private int idDonoObjeto;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,11 +45,14 @@ public class ObjetoActivity extends AppCompatActivity {
         TextView textViewDescricao = (TextView) findViewById(R.id.descricao_objeto_show);
         TextView textViewPlataforma = (TextView) findViewById(R.id.categoria_objeto_show);
         TextView textViewAplicacao = (TextView) findViewById(R.id.dono_objeto_show);
+        Button solicitarEmprestimo = (Button) findViewById(R.id.pedir_emprestimo) ;
 
         sessaoUsuario = SessaoUsuario.getInstancia();
         usuarioNegocio = UsuarioNegocio.getInstancia(this);
         pessoaLogada = sessaoUsuario.getPessoaLogada();
         objetoNegocio = ObjetoNegocio.getInstancia(this);
+
+        emprestimoNegocio = EmprestimoNegocio.getInstancia(this);
 
         Objeto objeto = getObjeto(idObjeto);
         String nomeDono;
@@ -58,6 +66,15 @@ public class ObjetoActivity extends AppCompatActivity {
         textViewPlataforma.setText(objeto.getCategoriaEnum().toString());
         textViewAplicacao.setText(informacoesDono);
         imageView.setImageURI(objeto.getFoto());
+
+        idDonoObjeto = objeto.getIdDono();
+
+        solicitarEmprestimo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                emprestar();
+            }
+        });
     }
 
     public Objeto getObjeto(int idObjeto) {
@@ -93,4 +110,16 @@ public class ObjetoActivity extends AppCompatActivity {
 
         }*/
     }
+
+    public void emprestar(){
+        try {
+            emprestimoNegocio.Emprestimo(pessoaLogada.getId(),idObjeto,idDonoObjeto);
+            GuiUtil.exibirMsg(this,String.valueOf(getObjeto(idObjeto).getIdAlugador()));
+            // GuiUtil.exibirMsg(this,"Objeto alugado com sucesso");
+        }catch (MindbitException e){
+            GuiUtil.exibirMsg(this,e.getMessage());
+        }
+
+    }
+
 }

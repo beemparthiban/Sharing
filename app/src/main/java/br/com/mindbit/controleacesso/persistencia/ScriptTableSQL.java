@@ -53,10 +53,10 @@ public class ScriptTableSQL {
         emprestimoBuilder.append("_id_emprestimo  integer primary key autoincrement,   ");
         emprestimoBuilder.append("id_dono_objeto  integer not null,  ");
         emprestimoBuilder.append("id_objeto  integer not null,  ");
-        emprestimoBuilder.append("id_alugador_objeto  integer not null,  ");
+        emprestimoBuilder.append("id_pessoa_usuario  integer not null,  ");
         emprestimoBuilder.append("foreign key ( id_dono_objeto ) references tabela_objeto ( id_dono_objeto ), ");
         emprestimoBuilder.append("foreign key ( id_objeto ) references tabela_objeto ( _id_objeto ), ");
-        emprestimoBuilder.append("foreign key ( id_alugador_objeto ) references tabela_pessoa ( _id_pessoa ) );");
+        emprestimoBuilder.append("foreign key ( id_pessoa_usuario ) references tabela_pessoa ( _id_pessoa ) );");
         return emprestimoBuilder.toString();
     }
 
