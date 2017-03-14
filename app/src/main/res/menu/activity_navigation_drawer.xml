@@ -4,7 +4,7 @@
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/nav_cadastrar_objetos"
-            android:icon="@drawable/ic_lupa"
+            android:icon="@drawable/ic_nota"
             android:title="Cadastrar Objeto"/>
 
         <item
@@ -14,7 +14,7 @@
 
         <item
             android:id="@+id/nav_meus_objetos"
-            android:icon="@drawable/ic_evento"
+            android:icon="@drawable/ic_lupa"
             android:title="Meus Objetos"/>
 
     </group>
@@ -23,28 +23,28 @@
         <menu>
             <item
                 android:id="@+id/nav_ferramentas"
-                android:icon="@drawable/ic_menu_share"
+                android:icon="@drawable/ic_lupa"
                 android:title="Ferramentas" />
             <item
                 android:id="@+id/nav_livros"
-                android:icon="@drawable/ic_sobre"
+                android:icon="@drawable/ic_lupa"
                 android:title="Livros" />
 
             <item
                 android:id="@+id/nav_jogos"
-                android:icon="@drawable/ic_sobre"
+                android:icon="@drawable/ic_lupa"
                 android:title="Jogos" />
             <item
                 android:id="@+id/nav_cozinha"
-                android:icon="@drawable/ic_sobre"
+                android:icon="@drawable/ic_lupa"
                 android:title="Cozinha" />
             <item
                 android:id="@+id/nav_viagem"
-                android:icon="@drawable/ic_sobre"
+                android:icon="@drawable/ic_lupa"
                 android:title="Viagem" />
             <item
                 android:id="@+id/nav_outros"
-                android:icon="@drawable/ic_sobre"
+                android:icon="@drawable/ic_lupa"
                 android:title="Outros" />
         </menu>
     </item>

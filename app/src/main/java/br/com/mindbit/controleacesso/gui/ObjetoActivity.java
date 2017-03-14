@@ -114,8 +114,8 @@ public class ObjetoActivity extends AppCompatActivity {
     public void emprestar(){
         try {
             emprestimoNegocio.Emprestimo(pessoaLogada.getId(),idObjeto,idDonoObjeto);
-            GuiUtil.exibirMsg(this,String.valueOf(getObjeto(idObjeto).getIdAlugador()));
-            // GuiUtil.exibirMsg(this,"Objeto alugado com sucesso");
+            //GuiUtil.exibirMsg(this,String.valueOf(getObjeto(idObjeto).getIdAlugador()));
+            GuiUtil.exibirMsg(this,"Objeto alugado com sucesso");
         }catch (MindbitException e){
             GuiUtil.exibirMsg(this,e.getMessage());
         }
