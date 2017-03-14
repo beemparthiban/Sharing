@@ -15,6 +15,8 @@ import java.util.List;
 
 import br.com.mindbit.R;
 import br.com.mindbit.controleacesso.dominio.Objeto;
+import br.com.mindbit.controleacesso.persistencia.ObjetoDao;
+import br.com.mindbit.infra.gui.GuiUtil;
 
 public class ObjetoAdapter extends BaseAdapter {
         private LayoutInflater mInflater;
@@ -54,23 +56,18 @@ public class ObjetoAdapter extends BaseAdapter {
             ((TextView) view.findViewById(R.id.txtitem_nome_evento)).setText(objeto.getNome());
             ((TextView) view.findViewById(R.id.txtitem_descricao_evento)).setText(objeto.getDescricao());
             ((TextView) view.findViewById(R.id.txtitem_categoria_objeto)).setText(objeto.getCategoriaEnum().toString());
-            ((TextView) view.findViewById(R.id.txtitem_estado_objeto)).setText(objeto.getEstadoEnum().toString());
-            //((ImageView) view.findViewById(R.id.img_objeto)).setImageResource(R.drawable.object_default);
+            if (objeto.getEstadoEnum().toString() == "0"){
+                ((TextView) view.findViewById(R.id.txtitem_estado_objeto)).setText("Disponível");
+            }
+            else{
+                ((TextView) view.findViewById(R.id.txtitem_estado_objeto)).setText("Alugado");
+            }
+
             if (objeto.getFoto() != null){
                 ((ImageView) view.findViewById(R.id.img_objeto)).setImageURI(objeto.getFoto());
             }else{
                 ((ImageView) view.findViewById(R.id.img_objeto)).setImageURI(AddObjetoActivity.FOTO_PADRAO);
             }
-
-
-
-
-
-            SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd/MM/yyyy HH:mm");
-            //String inicio = simpleDateFormat.format(addOneMonth(objeto.getDataInicio()));
-            //((TextView) view.findViewById(R.id.txtitem_data_evento)).setText(inicio);
-
-            //setIconePrioridade(view);
 
             return view;
         }

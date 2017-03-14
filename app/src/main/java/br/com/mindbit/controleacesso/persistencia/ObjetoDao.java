@@ -29,7 +29,7 @@ public class ObjetoDao {
 
     private static ObjetoDao instanciaObjetoDao = new ObjetoDao();
 
-    private ObjetoDao() {}
+    public ObjetoDao() {}
 
     /* singleton */
     public static ObjetoDao getInstancia(Context contexto) {

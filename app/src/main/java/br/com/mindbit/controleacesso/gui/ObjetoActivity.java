@@ -17,6 +17,7 @@ import br.com.mindbit.controleacesso.negocio.EmprestimoNegocio;
 import br.com.mindbit.controleacesso.negocio.ObjetoNegocio;
 import br.com.mindbit.controleacesso.negocio.SessaoUsuario;
 import br.com.mindbit.controleacesso.negocio.UsuarioNegocio;
+import br.com.mindbit.controleacesso.persistencia.ObjetoDao;
 import br.com.mindbit.infra.gui.GuiUtil;
 import br.com.mindbit.infra.gui.MindbitException;
 
@@ -112,10 +113,15 @@ public class ObjetoActivity extends AppCompatActivity {
     }
 
     public void emprestar(){
+
+        ObjetoDao objetoDao = new ObjetoDao();
+
         try {
             emprestimoNegocio.Emprestimo(pessoaLogada.getId(),idObjeto,idDonoObjeto);
             //GuiUtil.exibirMsg(this,String.valueOf(getObjeto(idObjeto).getIdAlugador()));
+            objetoDao.alugarObjeto(idObjeto,pessoaLogada.getId());
             GuiUtil.exibirMsg(this,"Objeto alugado com sucesso");
+
         }catch (MindbitException e){
             GuiUtil.exibirMsg(this,e.getMessage());
         }

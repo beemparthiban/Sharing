@@ -157,7 +157,8 @@
             android:text="Solicitar devolução"
             android:textColor="@color/popColor"
             android:backgroundTint="@color/roxo"
-            android:layout_below="@+id/alugador_meu_objeto_show"/>
+            android:layout_below="@+id/alugador_meu_objeto_show"
+            android:onClick="retornarObjeto()" />
 
 
     </RelativeLayout>

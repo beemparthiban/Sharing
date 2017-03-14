@@ -16,6 +16,7 @@ import br.com.mindbit.controleacesso.dominio.Pessoa;
 import br.com.mindbit.controleacesso.negocio.ObjetoNegocio;
 import br.com.mindbit.controleacesso.negocio.SessaoUsuario;
 import br.com.mindbit.controleacesso.negocio.UsuarioNegocio;
+import br.com.mindbit.controleacesso.persistencia.ObjetoDao;
 import br.com.mindbit.infra.gui.GuiUtil;
 import br.com.mindbit.infra.gui.MindbitException;
 
@@ -113,8 +114,12 @@ public class MeuObjetoActivity extends AppCompatActivity {
     }
 
     public void retornarObjeto(){
+    String variavel;
+        variavel = String.valueOf(idObjeto);
+        ObjetoDao objetoDao = new ObjetoDao();
         try{
-            objetoNegocio.retornarObjeto(idObjeto);
+            GuiUtil.exibirMsg(this,variavel);
+            objetoDao.devolverObjeto(getObjeto(idObjeto).getId());
             GuiUtil.exibirMsg(this,"Objeto devolvido");
         }catch (MindbitException e){
             GuiUtil.exibirMsg(this,e.getMessage());
