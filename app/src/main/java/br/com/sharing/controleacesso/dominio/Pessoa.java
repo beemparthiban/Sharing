@@ -1,0 +1,65 @@
+package br.com.sharing.controleacesso.dominio;
+import android.net.Uri;
+
+public class Pessoa {
+    private int id;
+    private Usuario usuario;
+    private String nome;
+    private String email;
+    private String endereco;
+    private String cpf;
+    private Uri foto;
+    private int pontuacao;
+
+
+    public Pessoa() {
+        this.nome = null;
+        this.email = null;
+        this.endereco = null;
+        this.cpf = null;
+        this.foto = null;
+        this.usuario=null;
+        this.pontuacao=0;
+    }
+
+    public int getId(){
+        return id;
+    }
+    public void setId(int id){ this.id = id; }
+
+    public Usuario getUsuario(){
+        return usuario;
+    }
+    public void setUsuario(Usuario usuario){
+        this.usuario = usuario;
+    }
+
+    public String getNome(){return this.nome;}
+    public void setNome(String nome){ this.nome = nome; }
+
+    public String getEmail(){
+        return this.email;
+    }
+    public void setEmail(String email){
+        this.email = email;
+    }
+
+    public String getEndereco() { return this.endereco; }
+    public void setEndereco(String endereco){ this.endereco = endereco; }
+
+    public String getCpf(){return this.cpf;}
+    public void setCpf(String cpf){ this.cpf = cpf; }
+
+    public Uri getFoto() {return this.foto;}
+    public void setFoto(Uri foto) {this.foto = foto;}
+
+    public int getPontuacao(){return pontuacao;}
+    public void setPontuacao(int pontuacao){this.pontuacao = pontuacao;}
+
+    public void addPontuacao(int pontuacao){this.pontuacao += pontuacao;}
+    public void dimPontuacao(int pontuacao){this.pontuacao -=pontuacao;}
+
+
+}
+
+

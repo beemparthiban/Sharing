@@ -17,13 +17,5 @@
         android:layout_marginRight="24dp"
         android:layout_marginTop="23dp"/>
 
-    <fragment
-        android:id="@+id/fragment"
-        android:name="br.com.mindbit.controleacesso.gui.ContadorFragment"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="7dp" />
 
 </RelativeLayout>

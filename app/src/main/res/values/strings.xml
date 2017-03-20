@@ -92,16 +92,12 @@
     <string name="listview_evento_data">Data:</string>
 
     <string name="btn_add_disciplina">Adicionar</string>
-    <string name="disciplina_nome">Nome da Disciplina</string>
-    <string name="disciplina_codigo">Código da Disciplina</string>
     <string name="add_disciplina_nome_vazio">Nome obrigatório!</string>
     <string name="add_disciplina_codigo_vazio">Código obrigatório!</string>
     <string name="add_disciplina_tamanho_nome_invalido">O nome deve ter mais de 3 caracteres</string>
     <string name="add_disciplina_tamanho_codigo_invalido">O código deve ter 5 caracteres</string>
-    <string name="add_disciplina_erro">Disciplina já cadastrada</string>
-    <string name="add_disciplina_sucesso">Disciplina cadastrada com sucesso!</string>
     <string name="evento_btn_adicionar">Adicionar</string>
-    <string name="add_evento_sucesso">"Evento cadastrado com sucesso"</string>
+
 
     <string name="contador_nome_evento">Nome do Evento</string>
     <string name="contador_vazio">Sem objetos no mês</string>
@@ -115,25 +111,6 @@
     <string name="btn_add_amigo">Adicionar</string>
     <string name="email_vazio">Digite um e-mail</string>
     <string name="nome_vazio">Insira um nome</string>
-
-    <string name="compartilhar">Compartilhar para:</string>
-    <string name="assinatura_email">\nAtenciosamente, \n</string>
-    <string name="rodape_email">\nvia MindBit - https://sites.google.com/site/mindbitufrpe/</string>
-    <string name="checkbox_evento_vazio">Escolha algum objeto</string>
-    <string name="checkbox_amigo_vazio">Escolha algum amigo</string>
-    <string name="compartilhar_email_assunto">MindBit - Alguém compartilhou objetos com você!</string>
-
-
-    <string name="activity_sobre">Sobre</string>
-    <string name="sobre_nome">MindBit</string>
-    <string name="sobre_descricao">Projeto para segunda VA de Modelagem e Programação Orientada a Objetos (MPOO) do curso de Sistema de Informação, lecionada pelo professor Gabriel Alves na Universidade Federal Rural de Pernambuco (UFRPE).</string>
-    <string name="sobre_desenvolvedores">Desenvolvedores:</string>
-    <string name="sobre_ariana">Ariana Lima</string>
-    <string name="sobre_bernardo">Bernardo Junior</string>
-    <string name="sobre_bruna">Bruna Vasconcelos</string>
-    <string name="sobre_gabriel">Gabriel Maia</string>
-    <string name="sobre_tiago">Tiago Sitonio</string>
-    <string name="sobre_victor">Victor Leuthier</string>
 
 
 </resources>

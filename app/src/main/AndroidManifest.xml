@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="br.com.mindbit">
+    package="br.com.sharing">
 
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
@@ -12,52 +12,55 @@
         android:label="@string/app_nome"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".controleacesso.gui.LoginActivity">
+        <activity android:name="br.com.sharing.controleacesso.gui.LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".controleacesso.gui.CadastroActivity" />
+        <activity android:name="br.com.sharing.controleacesso.gui.CadastroActivity" />
         <activity
-            android:name=".controleacesso.gui.PerfilActivity"
+            android:name="br.com.sharing.controleacesso.gui.PerfilActivity"
             android:label="@string/title_activity_navigation"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".controleacesso.gui.ListarMeusObjetosActivity"
+            android:name="br.com.sharing.controleacesso.gui.ListarMeusObjetosActivity"
             android:label="Meus Objetos" />
         <activity
-            android:name=".controleacesso.gui.AddObjetoActivity"
+            android:name="br.com.sharing.controleacesso.gui.AddObjetoActivity"
             android:label="Adicionar Objeto" />
         <activity
-             android:name=".controleacesso.gui.ListarObjetosFerramentasActivity"
+             android:name="br.com.sharing.controleacesso.gui.ListarObjetosFerramentasActivity"
              android:label="Ferramentas"/>
         <activity
-            android:name=".controleacesso.gui.ListarObjetosLivrosActivity"
+            android:name="br.com.sharing.controleacesso.gui.ListarObjetosLivrosActivity"
             android:label="Livros"/>
         <activity
-            android:name=".controleacesso.gui.ListarObjetosJogosActivity"
+            android:name="br.com.sharing.controleacesso.gui.ListarObjetosJogosActivity"
             android:label="Jogos"/>
         <activity
-            android:name=".controleacesso.gui.ListarObjetosCozinhaActivity"
+            android:name="br.com.sharing.controleacesso.gui.ListarObjetosCozinhaActivity"
             android:label="Utensílios de Cozinha"/>
         <activity
-            android:name=".controleacesso.gui.ListarObjetosViagemActivity"
+            android:name="br.com.sharing.controleacesso.gui.ListarObjetosViagemActivity"
             android:label="Objetos para Viagens"/>
         <activity
-            android:name=".controleacesso.gui.ListarObjetosOutrosActivity"
+            android:name="br.com.sharing.controleacesso.gui.ListarObjetosOutrosActivity"
             android:label="Outros Objetos"/>
 
         <activity
-            android:name=".controleacesso.gui.ObjetoActivity"
+            android:name="br.com.sharing.controleacesso.gui.ObjetoActivity"
             android:label="@string/app_nome"/>
         <activity
-            android:name=".controleacesso.gui.MeuObjetoActivity"
+            android:name="br.com.sharing.controleacesso.gui.MeuObjetoActivity"
             android:label="@string/app_nome"/>
         <activity
-            android:name=".controleacesso.gui.ListaImagensObjetoActivity"
+            android:name="br.com.sharing.controleacesso.gui.ListaImagensObjetoActivity"
             android:label="Imagens"/>
+        <activity
+            android:name="br.com.sharing.controleacesso.gui.CalendarActivity"
+            android:label="Devoluções"/>
     </application>
 
 </manifest>

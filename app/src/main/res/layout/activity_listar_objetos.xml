@@ -9,7 +9,7 @@
     android:paddingLeft="24dp"
     android:paddingRight="24dp"
     android:weightSum="1"
-    tools:context=".controleacesso.gui.PerfilActivity">
+    tools:context="br.com.sharing.controleacesso.gui.PerfilActivity">
 
     <EditText
         android:id="@+id/edtsearch"
