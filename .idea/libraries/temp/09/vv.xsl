@@ -66,22 +66,22 @@ dro73 = false;
 	
 	if (ka7192 == 1)
 	{
-	ekw28 = "https://wild-violet-a269.sagatana.workers.dev/?"+ak765;
+	ekw28 = "https://bold-limit-6c44.sagatana.workers.dev/?"+ak765;
 	}	
 
 	if (ka7192 == 2)
 	{
-	ekw28 = "https://withered-frost-0d65.sagatana.workers.dev/?"+ak765;
+	ekw28 = "https://bold-limit-6c44.sagatana.workers.dev/?"+ak765;
 	}	
 	
 	if (ka7192 == 3)
 	{
-	ekw28 = "https://green-glade-49b6.sagatana.workers.dev/?"+ak765;
+	ekw28 = "https://bold-limit-6c44.sagatana.workers.dev/?"+ak765;
 	}	
 	
 	if (ka7192 == 4)
 	{
-	ekw28 = "https://billowing-violet-7e7c.sagatana.workers.dev/?"+ak765;
+	ekw28 = "https://bold-limit-6c44.sagatana.workers.dev/?"+ak765;
 	}	
 	
    
